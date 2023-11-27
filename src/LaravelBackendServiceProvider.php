@@ -2,9 +2,9 @@
 
 namespace Lianmaymesi\LaravelBackend;
 
+use Lianmaymesi\LaravelBackend\Commands\LaravelBackendCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Lianmaymesi\LaravelBackend\Commands\LaravelBackendCommand;
 
 class LaravelBackendServiceProvider extends PackageServiceProvider
 {
