@@ -3,8 +3,8 @@
 namespace Lianmaymesi\LaravelBackend\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use Lianmaymesi\LaravelBackend\LaravelBackendServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
