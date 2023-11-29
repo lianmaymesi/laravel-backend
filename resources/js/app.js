@@ -1,4 +1,4 @@
-import { Livewire, Alpine } from "../../../vendor/livewire/livewire/dist/livewire.esm";
+import { Livewire, Alpine } from "../../vendor/livewire/livewire/dist/livewire.esm";
 import Collapse from "@alpinejs/collapse";
 import Anchor from "@alpinejs/anchor";
 

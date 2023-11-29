@@ -10,21 +10,14 @@ class LaravelBackendServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
-        /*
-         * This class is a Package Service Provider
-         *
-         * More info: https://github.com/spatie/laravel-package-tools
-         */
+        if (app()->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/../public/vendor/laravel-backend' => public_path('vendor/laravel-backend'),
+            ], ['laravel-backend-assets', 'laravel-assets']);
+        }
+
         $package
             ->name('laravel-backend')
-            ->hasViews('lb')
-            ->hasInstallCommand(function (InstallCommand $command) {
-                $command
-                    ->startWith(function (InstallCommand $command) {
-                        $command->info('Hello, thank you trying my package!');
-                    })
-                    ->publishAssets()
-                    ->askToStarRepoOnGitHub('lianmaymesi/laravel-backend');
-            });
+            ->hasViews('lb');
     }
 }
