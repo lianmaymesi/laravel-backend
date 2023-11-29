@@ -4,7 +4,6 @@ namespace Lianmaymesi\LaravelBackend;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Lianmaymesi\LaravelBackend\Commands\LaravelBackendCommand;
 
 class LaravelBackendServiceProvider extends PackageServiceProvider
 {
@@ -17,9 +16,7 @@ class LaravelBackendServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-backend')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel-backend_table')
-            ->hasCommand(LaravelBackendCommand::class);
+            ->hasViews('lb')
+            ->hasAssets('laravel-backend-assets');
     }
 }
