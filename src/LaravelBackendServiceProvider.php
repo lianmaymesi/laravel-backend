@@ -2,6 +2,7 @@
 
 namespace Lianmaymesi\LaravelBackend;
 
+use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -17,6 +18,13 @@ class LaravelBackendServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-backend')
             ->hasViews('lb')
-            ->hasAssets('laravel-backend-assets');
+            ->hasInstallCommand(function (InstallCommand $command) {
+                $command
+                    ->startWith(function (InstallCommand $command) {
+                        $command->info('Hello, thank you trying my package!');
+                    })
+                    ->publishAssets()
+                    ->askToStarRepoOnGitHub('lianmaymesi/laravel-backend');
+            });
     }
 }
