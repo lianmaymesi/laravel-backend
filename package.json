@@ -1,7 +1,7 @@
 {
     "name": "laravel-media",
     "version": "1.0.0",
-    "description": "",
+    "description": "A simple backend UI for Laravel Projects.",
     "private": true,
     "scripts": {
         "dev": "vite",
