@@ -6,5 +6,5 @@ coverage
 docs
 phpunit.xml
 testbench.yaml
-vendor
+/vendor
 node_modules
