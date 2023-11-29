@@ -7,10 +7,6 @@
 
 A simple backend UI for Laravel Projects. I build this for myself, where I can build the backend apps quickly. Inspired by many Senior Developers.
 
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-backend.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-backend)
-
 ## Installation
 
 You can install the package via composer:
