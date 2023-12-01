@@ -1,14 +1,45 @@
+@php
+    $maxWidth = [
+        'xs' => 'max-w-xs',
+        'sm' => 'max-w-sm',
+        'md' => 'max-w-md',
+        'lg' => 'max-w-lg',
+        'xl' => 'max-w-xl',
+        '2xl' => 'max-w-2xl',
+        '3xl' => 'max-w-3xl',
+        '4xl' => 'max-w-4xl',
+        '5xl' => 'max-w-5xl',
+        '6xl' => 'max-w-6xl',
+        '7xl' => 'max-w-7xl',
+        'full' => 'max-w-full',
+        'min' => 'max-w-min',
+        'max' => 'max-w-max',
+        'fit' => 'max-w-fit',
+        'scrren-sm' => 'max-w-scrren-sm',
+        'screen-md' => 'max-w-screen-md',
+        'screen-lg' => 'max-w-screen-lg',
+        'screen-xl' => 'max-w-screen-xl',
+        'screen-2xl' => 'max-w-screen-2xl',
+    ][$maxWidth ?? '2xl'];
+@endphp
 <div class="relative min-h-full">
     <div>
         <div class="relative">
             <div class="relative mb-0 w-full">
                 <header class="relative w-full min-w-[min-content] border-b border-slate-100 bg-white py-2">
-                    <div class="mx-auto flex max-w-screen-2xl items-center justify-between px-4">
+                    <div @class(['mx-auto flex items-center justify-between px-4', $maxWidth])>
                         <button x-show="!isOpen()" @click.prevent="handleOpen()">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="h-6 w-6">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                        </button>
+                        <button x-show="isOpen()" @click.prevent="handleClose()">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
                             </svg>
                         </button>
                         <div class="flex min-w-[238px] shrink-0 grow basis-auto items-center space-x-4">
@@ -43,7 +74,7 @@
                     </div>
                 </header>
             </div>
-            <div class="relative mx-auto flex max-w-screen-2xl flex-col">
+            <div @class(['relative mx-auto flex flex-col', $maxWidth])>
                 <div class="flex items-end justify-between px-4">
                     @if (isset($heading))
                         {{ $heading }}
@@ -68,21 +99,22 @@
                             :class="{
                                 'max-w-[256px]': isAboveBreakPoint,
                                 'max-w-[240px] bg-white p-2': !isAboveBreakPoint
-                            }">
+                            }"
+                            @click.outside="handleAway()">
                             <x-lb::navigate>
                                 @if (isset($navigation))
                                     {{ $navigation }}
                                 @endif
                             </x-lb::navigate>
                         </div>
-                        <div class="fixed inset-y-1/2 ml-[256px]" :class="{ 'hidden': isAboveBreakPoint }">
+                        {{-- <div class="fixed inset-y-1/2 ml-[256px]" :class="{ 'hidden': isAboveBreakPoint }">
                             <button class="rounded-full bg-red-500 p-1 text-white" @click.prevent="handleClose()">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             </button>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="lm-scroll-hidden mt-4 h-[calc(100vh-177px)] grow overflow-hidden overflow-y-auto"
                         :class="{

@@ -5,17 +5,18 @@ import Anchor from "@alpinejs/anchor";
 const breakpoint = 1024;
 
 document.addEventListener("alpine:init", () => {
-    Alpine.data('sidebar', () => ({
+    Alpine.data('sidebar', (persist = false) => ({
         open: {
             above: true,
             below: false
         },
         isAboveBreakPoint: window.innerWidth > breakpoint,
+        isSidebarPersist: persist,
         handleResize() {
             this.isAboveBreakPoint = window.innerWidth > breakpoint;
         },
         isOpen() {
-            if(this.isAboveBreakPoint) {
+            if(this.isAboveBreakPoint & !this.isSidebarPersist) {
                 return this.open.above;
             }
             return this.open.below;
@@ -27,14 +28,20 @@ document.addEventListener("alpine:init", () => {
             this.open.below = true;
         },
         handleClose() {
-            if (this.isAboveBreakpoint) {
+            if(this.isSidebarPersist) {
+                this.open.above = false;
+            } else {
                 this.open.above = false;
             }
             this.open.below = false;
         },
         handleAway() {
-            if(!this.isAboveBreakPoint) {
+            if(this.isSidebarPersist)  {
                 this.open.below = false;
+            } else {
+                if(!this.isAboveBreakPoint) {
+                    this.open.below = false;
+                }
             }
         }
     }));

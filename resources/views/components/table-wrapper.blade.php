@@ -1,10 +1,10 @@
 @props(['dataCount', 'columns', 'pagination'])
-<div class="relative overflow-hidden border-y bg-slate-100 lg:rounded-xl">
-    <div class="sticky top-0 z-10 -mb-[2px] border-x border-b bg-gray-50 px-4 py-3">
+<div class="relative overflow-hidden rounded-b-xl rounded-t-3xl border-y bg-slate-100 lg:rounded-t-lg">
+    <div class="sticky top-0 z-[99999] -mb-[2px] border-x border-b bg-gray-50 px-4 py-3">
         <div class="flex items-center justify-between">
             <div></div>
             <div class="flex items-center gap-x-3">
-                <x-lb::form.input label-off placeholder="Search" wire:model.live="search"></x-lb::form.input>
+                <x-lb::form.input wire:model.live="search" label-off placeholder="Search"></x-lb::form.input>
                 <x-lb::form.select wire:model.live="perPage" label-off>
                     <option value="10">10</option>
                     <option value="50">50</option>
@@ -28,11 +28,9 @@
                                 <x-lb::buttons.danger>Reset</x-lb::buttons.danger>
                             </div>
                             <div class="mt-4 grid gap-y-4">
-                                <div>
-                                    <x-lb::form.choice wire:model.live="filters.status" label="Status"
-                                        options="[{ value: 'all', label: 'All' },{ value: 'active', label: 'Active' },{ value: 'in-active', label: 'In-Active' },{ value: 'scheduled', label: 'Scheduled' }]">
-                                    </x-lb::form.choice>
-                                </div>
+                                @if (isset($filters))
+                                    {{ $filters }}
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -68,7 +66,7 @@
         </div>
     </div>
     <div @class([
-        'lm-scroll-hidden overflow-y-auto border-x z-0',
+        'lm-scroll overflow-y-auto overflow-x-auto border-x z-0',
         'h-[calc(100vh-303px)]' => $dataCount > 1,
         'h-[calc(100vh-239px)]' => $dataCount == 1,
     ]) {{ $attributes }}>

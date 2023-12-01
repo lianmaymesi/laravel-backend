@@ -1,3 +1,3 @@
-<tbody class="whitespace-nowrap">
+<tbody>
     {{ $slot }}
 </tbody>

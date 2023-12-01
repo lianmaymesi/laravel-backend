@@ -1,14 +1,22 @@
-@props(['sortable' => false, 'direction' => '', 'hideColumn' => false])
+@props([
+    'sortable' => false,
+    'direction' => '',
+    'hideColumn' => false,
+    'leftSticky' => false,
+    'rightSticky' => false,
+])
 <th {{ $attributes }} @class([
-    'sticky top-0 bg-gray-100 px-3 py-3.5 sm:first-of-type:ps-3 sm:last-of-type:pe-3',
+    'sticky top-0 bg-gray-100 px-3 py-2 sm:first-of-type:ps-3 sm:last-of-type:pe-3',
     'hidden' => $hideColumn,
+    'first-of-type:left-0 z-[9999]' => $leftSticky,
+    'last-of-type:right-0 z-[9999]' => $rightSticky,
 ])>
     @if ($sortable)
         <button type="button" class="group flex cursor-pointer items-center gap-x-1 whitespace-nowrap">
             <span class="sr-only">
                 Sort by
             </span>
-            <span class="text-sm font-semibold text-gray-950">
+            <span class="font-semibold text-gray-950">
                 {{ $slot }}
             </span>
             @if ($direction === 'asc')
@@ -29,7 +37,7 @@
         </button>
     @else
         <span class="group flex items-center gap-x-1 whitespace-nowrap">
-            <span class="text-sm font-semibold text-gray-950">
+            <span class="font-semibold text-gray-950">
                 {{ $slot }}
             </span>
         </span>
