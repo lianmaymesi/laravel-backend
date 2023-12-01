@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-backend` will be documented in this file.
 
+## v0.2.1 - 2023-12-01
+
+- Fixed some style issues
+- Added `highlight` & `danger` row for table
+- Added slot for table filters
+
+**Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v0.2.0...v0.2.1
+
 ## v0.2.0 - 2023-11-30
 
 **Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v0.1.2...v0.2.0
