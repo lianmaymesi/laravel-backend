@@ -4,13 +4,15 @@
     'hideColumn' => false,
     'leftSticky' => false,
     'rightSticky' => false,
+    'customSticky' => false,
 ])
 <th {{ $attributes }} @class([
-    'sticky top-0 bg-gray-100 px-3 py-2 sm:first-of-type:ps-3 sm:last-of-type:pe-3',
+    'sticky bg-gray-100 px-3 py-2 sm:first-of-type:ps-3 sm:last-of-type:pe-3',
     'hidden' => $hideColumn,
     'first-of-type:left-0 z-[9999]' => $leftSticky,
     'last-of-type:right-0 z-[9999]' => $rightSticky,
-])>
+    'top-0' => $customSticky == false,
+]) @if ($customSticky) {{ $customSticky }} @endif>
     @if ($sortable)
         <button type="button" class="group flex cursor-pointer items-center gap-x-1 whitespace-nowrap">
             <span class="sr-only">
