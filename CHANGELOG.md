@@ -2,6 +2,12 @@
 
 All notable changes to `laravel-backend` will be documented in this file.
 
+## v0.3.2 - 2023-12-02
+
+Fixed some styling issues
+
+**Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v0.3.1...v0.3.2
+
 ## v0.3.1 - 2023-12-02
 
 Added slot for table controls `<x-slot:table-controls><x-slot>`
