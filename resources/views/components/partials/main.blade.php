@@ -107,14 +107,6 @@
                                 @endif
                             </x-lb::navigate>
                         </div>
-                        {{-- <div class="fixed inset-y-1/2 ml-[256px]" :class="{ 'hidden': isAboveBreakPoint }">
-                            <button class="rounded-full bg-red-500 p-1 text-white" @click.prevent="handleClose()">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </button>
-                        </div> --}}
                     </div>
                     <div class="lm-scroll-hidden mt-4 h-[calc(100vh-177px)] grow overflow-hidden overflow-y-auto"
                         :class="{

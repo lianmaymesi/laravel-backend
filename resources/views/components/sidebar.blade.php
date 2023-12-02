@@ -27,7 +27,12 @@
     x-on:keydown.escape.window="show = false" x-on:keydown.tab.prevent="$event.shiftKey || nextFocusable().focus()"
     x-on:keydown.shift.tab.prevent="prevFocusable().focus()" x-show="show" id="{{ $id }}"
     class="fixed bottom-0 right-0 top-0 z-[99999] flex h-screen max-h-screen min-h-screen w-full max-w-md shrink-0 flex-grow basis-auto flex-col border-l border-slate-200 bg-white shadow"
-    style="display: none;">
+    x-transition:enter="transition ease-in-out duration-200"
+    x-transition:enter-start="opacity-0 transform translate-x-1/2"
+    x-transition:enter-end="opacity-100 transform translate-x-0"
+    x-transition:leave="transition ease-in-out duration-200"
+    x-transition:leave-start="opacity-100 transform translate-x-0"
+    x-transition:leave-end="opacity-0 transform translate-x-1/2" style="display: none;">
     <div
         class="absolute inset-y-0 right-0 z-[9999] flex h-full w-full transform flex-col overflow-hidden transition-all duration-[400ms]">
         {{ $slot }}
