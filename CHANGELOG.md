@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-backend` will be documented in this file.
 
+## v0.3.0 - 2023-12-02
+
+- Added new `button`, and `anchor `components based on status
+- Added new colors for `status`
+- And improved Modals
+
+**Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v0.2.2...v0.3.0
+
 ## v0.2.2 - 2023-12-02
 
 Fixed some style issues
