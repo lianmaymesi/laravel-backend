@@ -4,6 +4,9 @@
         <div class="flex items-center justify-between">
             <div></div>
             <div class="flex items-center gap-x-3">
+                @if (isset($tableControls))
+                    {{ $tableControls }}
+                @endif
                 <x-lb::form.input wire:model.live="search" label-off placeholder="Search"></x-lb::form.input>
                 <x-lb::form.select wire:model.live="perPage" label-off>
                     <option value="10">10</option>
