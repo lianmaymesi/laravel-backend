@@ -1,5 +1,5 @@
 <button {{ $attributes }}
-    class="rounded-lg bg-red-600 px-4 py-2 text-sm font-medium leading-none text-red-100 duration-150 hover:bg-red-700 hover:text-red-50">
+    class="rounded-lg bg-red-600 px-4 py-2 font-medium leading-none text-red-100 duration-150 hover:bg-red-700 hover:text-red-50">
     <div class="flex items-center justify-center">
         @if ($attributes->has('wire:target'))
             <svg wire:loading.delay.default class="mr-1.5 h-[15px] w-[15px] animate-spin"

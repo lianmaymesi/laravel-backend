@@ -1,8 +1,9 @@
 <button {{ $attributes }}
-    class="rounded-lg bg-slate-600 px-4 py-2 font-medium leading-none text-slate-100 duration-150 hover:bg-slate-700 hover:text-slate-50">
-    <div class="flex items-center">
+    class="font-medium leading-none text-orange-600 duration-150 hover:text-orange-700 hover:underline"
+    wire:loading.attr="disabled">
+    <div class="flex items-center space-x-1">
         @if ($attributes->has('wire:target'))
-            <svg wire:loading.delay.default class="mr-1 h-[15px] w-[15px] animate-spin" xmlns="http://www.w3.org/2000/svg"
+            <svg wire:loading.delay.default class="h-[15px] w-[15px] animate-spin" xmlns="http://www.w3.org/2000/svg"
                 fill="none" viewBox="0 0 24 24" {{ $attributes->whereStartsWith('wire:target') }}>
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
                 </circle>
@@ -14,7 +15,7 @@
         @if (isset($icon))
             {{ $icon }}
         @endif
-        <span>
+        <span class="pt-[1.5px]">
             {{ $slot }}
         </span>
     </div>

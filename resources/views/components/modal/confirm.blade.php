@@ -19,9 +19,9 @@
         <p class="mt-1 text-gray-600">Are you sure you would like delete?</p>
     </div>
     <div class="flex justify-center space-x-2 bg-gray-50 p-4">
-        <button type="button" @click="show = !show" class="w-full rounded-lg border px-3 py-2 text-sm text-gray-600">
+        <x-lb::buttons-bg.disabled x-on:click="show = !show" type="button">
             Cancel
-        </button>
+        </x-lb::buttons-bg.disabled>
         {{ $button }}
     </div>
 </x-lb::modal>
