@@ -3,7 +3,7 @@
     'id' => null,
 ])
 <x-lb::modal :id="$id" :maxWidth="$maxWidth" {{ $attributes }}>
-    <div class="bg-slate-100 p-4 text-lg font-medium">
+    <div class="sticky top-0 w-full bg-slate-100 p-4 text-lg font-medium">
         @if (isset($header))
             {{ $header }}
         @endif
@@ -13,7 +13,7 @@
             {{ $body }}
         @endif
     </div>
-    <div class="flex justify-end space-x-2 bg-gray-100 p-4">
+    <div class="sticky bottom-0 flex justify-end space-x-2 bg-gray-100 p-4">
         <x-lb::buttons-bg.disabled x-on:click="show = !show" type="button">
             Close
         </x-lb::buttons-bg.disabled>
