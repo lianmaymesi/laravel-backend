@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-backend` will be documented in this file.
 
+## v0.3.4 - 2023-12-05
+
+- Fixed Milkdown styles and issues
+- Added `inlineedit` input type with passing `wire:change.enter`
+- Added default `textarea` component
+
+**Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v0.3.3...v0.3.4
+
 ## v0.3.3 - 2023-12-02
 
 Fixed Styling issues and added `custom-sticky` for `<th>`
