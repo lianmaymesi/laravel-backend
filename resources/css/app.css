@@ -10,7 +10,11 @@
 }
 
 .toastui-editor-defaultUI-toolbar, .toastui-editor-md-tab-container, .toastui-editor-toolbar {
-    @apply !h-auto;
+    @apply !h-auto !w-full;
+}
+
+.toastui-editor-main.toastui-editor-md-mode, .toastui-editor-main-container, .toastui-editor-md-container.toastui-editor-md-vertical-style, .toastui-editor.md-mode, .toastui-editor-md-preview  {
+    @apply !w-full;
 }
 
 .toastui-editor-toolbar-divider {
@@ -26,7 +30,7 @@
 }
 
 .toastui-editor-defaultUI {
-    @apply !border-none;
+    @apply !border-none !w-full;
 }
 
 .lm-scroll-hidden::-webkit-scrollbar {

@@ -3,12 +3,12 @@
     'id' => null,
 ])
 <x-lb::modal :id="$id" :maxWidth="$maxWidth" {{ $attributes }}>
-    <div class="sticky top-0 w-full bg-slate-100 p-4 text-lg font-medium">
+    <div class="sticky top-0 z-[999999] w-full bg-slate-100 p-4 text-lg font-medium">
         @if (isset($header))
             {{ $header }}
         @endif
     </div>
-    <div class="bg-slate-50 p-4">
+    <div class="bg-slate-50">
         @if (isset($body))
             {{ $body }}
         @endif

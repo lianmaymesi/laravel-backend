@@ -1,6 +1,7 @@
 import { Livewire, Alpine } from "../../vendor/livewire/livewire/dist/livewire.esm";
 import Collapse from "@alpinejs/collapse";
 import Anchor from "@alpinejs/anchor";
+import Editor from "@toast-ui/editor";
 
 const breakpoint = 1024;
 
@@ -43,6 +44,55 @@ document.addEventListener("alpine:init", () => {
                     this.open.below = false;
                 }
             }
+        }
+    }));
+
+    Alpine.data('inlineedit', () => ({
+        isEditing: false,
+        toggleEditingState() {
+            this.isEditing = !this.isEditing;
+
+            if (this.isEditing) {
+                this.$nextTick(() => {
+                    this.$refs.input.focus();
+                });
+            }
+        },
+        disableEditing() {
+            this.isEditing = false;
+        }
+    }));
+
+    Alpine.data('toastUiEditor', (model) => ({
+        markdown: model,
+        init() {
+            let editor = new Editor({
+                el: this.$refs.editor,
+                height: '500px',
+                initialEditType: 'markdown',
+                initialValue: this.markdown,
+                previewHighlight: true,
+                viewer: false,
+                usageStatistics: false,
+                previewStyle: 'vertical',
+            });
+            editor.getMarkdown();
+        }
+    }));
+
+    Alpine.data('inlineedit', () => ({
+        isEditing: false,
+        toggleEditingState() {
+            this.isEditing = !this.isEditing;
+
+            if (this.isEditing) {
+                this.$nextTick(() => {
+                    this.$refs.input.focus();
+                });
+            }
+        },
+        disableEditing() {
+            this.isEditing = false;
         }
     }));
 })
