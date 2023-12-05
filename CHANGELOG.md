@@ -2,6 +2,12 @@
 
 All notable changes to `laravel-backend` will be documented in this file.
 
+## v0.3.5 - 2023-12-05
+
+- Fixed issues inlineedit
+
+**Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v0.3.4...v0.3.5
+
 ## v0.3.4 - 2023-12-05
 
 - Fixed Milkdown styles and issues
