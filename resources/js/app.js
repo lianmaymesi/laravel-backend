@@ -62,12 +62,12 @@ Alpine.data('inlineedit', () => ({
     }
 }));
 
-Alpine.data('toastUiEditor', (model) => ({
+Alpine.data('toastUiEditor', (model, height = '500px') => ({
     markdown: model,
     init() {
         let editor = new Editor({
             el: this.$refs.editor,
-            height: '500px',
+            height: height,
             initialEditType: 'markdown',
             initialValue: this.markdown,
             previewHighlight: true,

@@ -1,5 +1,15 @@
 @php
     $id = $id ?? md5($attributes->wire('model'));
+    $maxWidth = [
+        'sm' => 'sm:max-w-sm',
+        'md' => 'sm:max-w-md',
+        'lg' => 'sm:max-w-lg',
+        'xl' => 'sm:max-w-xl',
+        '2xl' => 'sm:max-w-2xl',
+        '3xl' => 'sm:max-w-3xl',
+        '4xl' => 'sm:max-w-4xl',
+        '5xl' => 'sm:max-w-5xl',
+    ][$maxWidth ?? 'md'];
 @endphp
 <div x-data="{
     show: @entangle($attributes->wire('model')),
@@ -26,8 +36,10 @@
 })" x-on:close.stop="show = false"
     x-on:keydown.escape.window="show = false" x-on:keydown.tab.prevent="$event.shiftKey || nextFocusable().focus()"
     x-on:keydown.shift.tab.prevent="prevFocusable().focus()" x-show="show" id="{{ $id }}"
-    class="fixed bottom-0 right-0 top-0 z-[99999] flex h-screen max-h-screen min-h-screen w-full max-w-md shrink-0 flex-grow basis-auto flex-col border-l border-slate-200 bg-white shadow"
-    x-transition:enter="transition ease-in-out duration-200"
+    @class([
+        'fixed bottom-0 right-0 top-0 z-[99999] flex h-screen max-h-screen min-h-screen w-full shrink-0 flex-grow basis-auto flex-col border-l border-slate-200 bg-white shadow',
+        $maxWidth,
+    ]) x-transition:enter="transition ease-in-out duration-200"
     x-transition:enter-start="opacity-0 transform translate-x-1/2"
     x-transition:enter-end="opacity-100 transform translate-x-0"
     x-transition:leave="transition ease-in-out duration-200"
