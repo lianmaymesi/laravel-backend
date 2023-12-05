@@ -1,5 +1,5 @@
 @props(['labelOff' => false])
-<div class="h-full w-full bg-white">
+<div class="h-full w-full bg-white" wire:ignore {{ $attributes->whereDoesntStartWith('wire:change') }}>
     <button class="relative -bottom-1 h-full w-full cursor-pointer select-none bg-white text-blue-600 underline"
         @click.prevent @dblclick="toggleEditingState" x-show="!isEditing">
         {{ $slot }}
