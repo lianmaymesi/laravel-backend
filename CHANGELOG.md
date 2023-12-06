@@ -2,6 +2,18 @@
 
 All notable changes to `laravel-backend` will be documented in this file.
 
+## v0.3.12 - 2023-12-06
+
+### What's Changed
+
+* Bump vite from 4.5.0 to 4.5.1 by @dependabot in https://github.com/lianmaymesi/laravel-backend/pull/1
+
+### New Contributors
+
+* @dependabot made their first contribution in https://github.com/lianmaymesi/laravel-backend/pull/1
+
+**Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v0.3.11...v0.3.12
+
 ## v0.3.11 - 2023-12-05
 
 **Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v0.3.10...v0.3.11
