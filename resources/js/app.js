@@ -75,23 +75,9 @@ Alpine.data('toastUiEditor', (model, height = '500px') => ({
             usageStatistics: false,
             previewStyle: 'vertical',
         });
-        editor.getMarkdown();
-    }
-}));
-
-Alpine.data('inlineedit', () => ({
-    isEditing: false,
-    toggleEditingState() {
-        this.isEditing = !this.isEditing;
-
-        if (this.isEditing) {
-            this.$nextTick(() => {
-                this.$refs.input.focus();
-            });
-        }
-    },
-    disableEditing() {
-        this.isEditing = false;
+        editor.on('change', () => {
+            this.markdown = editor.getMarkdown();
+        });
     }
 }));
 

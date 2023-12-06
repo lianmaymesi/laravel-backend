@@ -70,8 +70,8 @@
     </div>
     <div @class([
         'lm-scroll overflow-y-auto overflow-x-auto border-x z-0',
-        'h-[calc(100vh-303px)]' => $dataCount > 1,
-        'h-[calc(100vh-239px)]' => $dataCount == 1,
+        'h-[calc(100vh-335px)] md:h-[calc(100vh-303px)]' => $dataCount > 1,
+        'h-[calc(100vh-274px)] md:h-[calc(100vh-239px)]' => $dataCount == 1,
     ]) {{ $attributes }}>
         {{ $slot }}
     </div>

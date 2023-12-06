@@ -75,7 +75,7 @@
                 </header>
             </div>
             <div @class(['relative mx-auto flex flex-col', $maxWidth])>
-                <div class="flex items-end justify-between px-4">
+                <div class="flex flex-col justify-between px-4 md:flex-row md:items-end">
                     @if (isset($heading))
                         {{ $heading }}
                     @endif
@@ -108,7 +108,7 @@
                             </x-lb::navigate>
                         </div>
                     </div>
-                    <div class="lm-scroll-hidden mt-4 h-[calc(100vh-177px)] grow overflow-hidden overflow-y-auto"
+                    <div class="lm-scroll-hidden mt-4 h-[calc(100vh-209px)] grow overflow-hidden overflow-y-auto md:h-[calc(100vh-177px)]"
                         :class="{
                             'w-full lg:w-[calc(100vh-256px)]': isAboveBreakPoint,
                             'relative w-full z-0': !isAboveBreakPoint
