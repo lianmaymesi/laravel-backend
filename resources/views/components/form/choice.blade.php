@@ -17,37 +17,7 @@
             </label>
         </div>
     @endif
-    <div x-data="{
-        multiple: true,
-        value: @entangle($attributes->wire('model')),
-        options: {{ $options }},
-        init() {
-            this.$nextTick(() => {
-                let choices = new Choices(this.$refs.select, {
-                    removeItems: true,
-                    removeItemButton: true,
-                    placeholderValue: 'All',
-                    allowHTML: false,
-                    duplicateItemsAllowed: false,
-                })
-                let refreshChoices = () => {
-                    let selection = this.multiple ? this.value : [this.value]
-                    choices.clearStore()
-                    choices.setChoices(this.options.map(({ value, label }) => ({
-                        value,
-                        label,
-                        selected: selection.includes(value),
-                    })))
-                }
-                this.$refs.select.addEventListener('change', () => {
-                    this.value = choices.getValue(true)
-                })
-                this.$watch('value', () => refreshChoices())
-                this.$watch('options', () => refreshChoices())
-                refreshChoices()
-            })
-        }
-    }" class="w-full max-w-sm" wire:ignore {{ $attributes->whereDoesntStartWith('x-ref') }}>
+    <div x-data="{ ...choiceSelect(@entangle($attributes->wire('model')), {{ $options }}) }" class="w-full max-w-sm" wire:ignore {{ $attributes->whereDoesntStartWith('x-ref') }}>
         <div class="min-w-0 flex-1">
             <select x-ref="select" :multiple="multiple"></select>
         </div>
@@ -63,9 +33,6 @@
         </div>
     @endif
 </div>
-@pushOnce('scripts')
-    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-@endPushOnce
 
 @pushOnce('styles')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />

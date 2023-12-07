@@ -13,7 +13,7 @@
         @endif
         @if ($inputType === 'choice')
             <x-lb::form.choice :label-off="$labelOff" {{ $attributes->whereDoesntStartWith('wire:change') }}
-                x-show="isEditing" :options="$options" @click.away="toggleEditingState" @keydown.enter="disableEditing"
+                x-show="isEditing" :options="$options" @click.away="toggleEditingState"
                 @keydown.window.escape="disableEditing" x-ref="input">
             </x-lb::form.choice>
         @endif
