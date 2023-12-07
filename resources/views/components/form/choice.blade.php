@@ -6,7 +6,7 @@
     'helpText' => '',
     'options' => [],
 ])
-<div class="grid gap-y-1.5">
+<div class="grid gap-y-1.5" {{ $attributes->whereStartsWith('x-ref') }}>
     @if (!$labelOff)
         <div class="flex items-center justify-between">
             <label class="text-sm font-medium tracking-wide text-slate-950">
@@ -27,7 +27,8 @@
                     removeItems: true,
                     removeItemButton: true,
                     placeholderValue: 'All',
-                    allowHTML: false
+                    allowHTML: false,
+                    duplicateItemsAllowed: false,
                 })
                 let refreshChoices = () => {
                     let selection = this.multiple ? this.value : [this.value]
@@ -38,15 +39,15 @@
                         selected: selection.includes(value),
                     })))
                 }
-                refreshChoices()
                 this.$refs.select.addEventListener('change', () => {
                     this.value = choices.getValue(true)
                 })
                 this.$watch('value', () => refreshChoices())
                 this.$watch('options', () => refreshChoices())
+                refreshChoices()
             })
         }
-    }" class="w-full max-w-sm" wire:ignore {{ $attributes }}>
+    }" class="w-full max-w-sm" wire:ignore {{ $attributes->whereDoesntStartWith('x-ref') }}>
         <div class="min-w-0 flex-1">
             <select x-ref="select" :multiple="multiple"></select>
         </div>
