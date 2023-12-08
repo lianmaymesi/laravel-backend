@@ -109,7 +109,6 @@ document.addEventListener('alpine:init', function () {
                     this.value = choices.getValue(true)
                     this.model = choices.getValue(true)
                 })
-                console.log(this.model)
                 this.$watch('value', () => refreshChoices())
                 this.$watch('options', () => refreshChoices())
                 this.$watch('model', () => refreshChoices())
