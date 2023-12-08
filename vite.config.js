@@ -8,7 +8,9 @@ export default defineConfig({
             buildDirectory: 'vendor/laravel-backend',
             input: [
                 'resources/css/app.css',
-                'resources/js/app.js'
+                'resources/js/app.js',
+                'resources/css/choices.css',
+                'resources/css/toastui.css'
             ],
             refresh: true,
         }),

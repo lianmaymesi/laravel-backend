@@ -5,8 +5,9 @@
     'required' => false,
     'helpText' => '',
     'options' => [],
+    'value' => [],
 ])
-<div class="grid gap-y-1.5" {{ $attributes->whereStartsWith('x-ref') }}>
+<div class="grid gap-y-1.5" {{ $attributes->whereStartsWith('x-ref') }} wire:ignore>
     @if (!$labelOff)
         <div class="flex items-center justify-between">
             <label class="text-sm font-medium tracking-wide text-slate-950">
@@ -17,7 +18,7 @@
             </label>
         </div>
     @endif
-    <div x-data="{ ...choiceSelect(@entangle($attributes->wire('model')), {{ $options }}) }" class="w-full max-w-sm" wire:ignore {{ $attributes->whereDoesntStartWith('x-ref') }}>
+    <div x-data="{ ...choiceSelect(@entangle($attributes->wire('model')), {{ $options }}, {{ $value }}) }" wire:ignore class="w-full max-w-sm" {{ $attributes->whereDoesntStartWith('x-ref') }}>
         <div class="min-w-0 flex-1">
             <select x-ref="select" :multiple="multiple"></select>
         </div>
@@ -35,5 +36,5 @@
 </div>
 
 @pushOnce('styles')
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+    {{ Vite::useHotFile('vendor/laravel-backend/laravel-backend.hot')->useBuildDirectory('vendor/laravel-backend')->withEntryPoints(['resources/css/choices.css']) }}
 @endPushOnce

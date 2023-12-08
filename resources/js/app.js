@@ -63,8 +63,9 @@ document.addEventListener('alpine:init', function () {
         }
     }));
 
-    Alpine.data('toastUiEditor', (model, height = '500px') => ({
+    Alpine.data('toastUiEditor', (model, height = '500px', value) => ({
         markdown: model,
+        value: value,
         init() {
             let editor = new Editor({
                 el: this.$refs.editor,
@@ -78,23 +79,21 @@ document.addEventListener('alpine:init', function () {
             });
             editor.on('change', () => {
                 this.markdown = editor.getMarkdown();
+                this.value = editor.getMarkdown();
             });
         }
     }));
 
-    Alpine.data('choiceSelect', (value, options, is_multiple = true) => ({
-        multiple: is_multiple,
+    Alpine.data('choiceSelect', (model, options, value) => ({
+        multiple: true,
         value: value,
         options: options,
+        model: model,
         init() {
             this.$nextTick(() => {
                 let choices = new Choices(this.$refs.select, {
-                    removeItems: true,
                     removeItemButton: true,
-                    placeholderValue: 'All',
-                    allowHTML: false,
-                    duplicateItemsAllowed: false,
-                    maxItemCount: -1
+                    placeholderValue: 'All'
                 })
                 let refreshChoices = () => {
                     let selection = this.multiple ? this.value : [this.value]
@@ -105,13 +104,53 @@ document.addEventListener('alpine:init', function () {
                         selected: selection.includes(value),
                     })))
                 }
+                refreshChoices()
                 this.$refs.select.addEventListener('change', () => {
                     this.value = choices.getValue(true)
+                    this.model = choices.getValue(true)
                 })
+                console.log(this.model)
                 this.$watch('value', () => refreshChoices())
                 this.$watch('options', () => refreshChoices())
-                refreshChoices()
+                this.$watch('model', () => refreshChoices())
             })
+        }
+    }));
+
+    Alpine.data('selectjs', (value, options) => ({
+        multiple: true,
+        value: value,
+        options: options,
+        init() {
+            let bootSelect2 = () => {
+                let selections = this.multiple ? this.value : [this.value]
+                $(this.$refs.select).select2({
+                    multiple: this.multiple,
+                    data: this.options.map(function(i) {
+                        if (i != null) {
+                            return {
+                                id: i.value,
+                                text: i.label,
+                                selected: selections.map(i => String(i)).includes(String(i.value)),
+                            }
+                        }
+                    }),
+                })
+            }
+            let refreshSelect2 = () => {
+                $(this.$refs.select).select2('destroy')
+                this.$refs.select.innerHTML = ''
+                bootSelect2()
+            }
+            bootSelect2()
+            $(this.$refs.select).on('change', () => {
+                let currentSelection = $(this.$refs.select).select2('data')
+                this.value = this.multiple ?
+                    currentSelection.map(i => i.id) :
+                    currentSelection[0].id
+            })
+            this.$watch('value', () => refreshSelect2())
+            this.$watch('options', () => refreshSelect2())
         }
     }));
 });
