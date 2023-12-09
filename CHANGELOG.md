@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-backend` will be documented in this file.
 
+## v0.3.18 - 2023-12-09
+
+**Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v0.3.17...v0.3.18
+
 ## v0.3.17 - 2023-12-08
 
 **Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v0.3.16...v0.3.17
