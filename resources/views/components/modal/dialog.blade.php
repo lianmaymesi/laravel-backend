@@ -14,9 +14,13 @@
         @endif
     </div>
     <div class="sticky bottom-0 flex justify-end space-x-2 bg-gray-100 p-4">
-        <x-lb::buttons-bg.disabled x-on:click="show = !show" type="button">
-            Close
-        </x-lb::buttons-bg.disabled>
+        @if (isset($customClose))
+            {{ $customClose }}
+        @else
+            <x-lb::buttons-bg.disabled x-on:click="show = !show" type="button">
+                Close
+            </x-lb::buttons-bg.disabled>
+        @endif
         @if (isset($button))
             {{ $button }}
         @endif
