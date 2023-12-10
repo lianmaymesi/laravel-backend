@@ -1,4 +1,4 @@
-@props(['labelOff' => false, 'inputType' => 'input', 'options' => [], 'value', 'type'])
+@props(['labelOff' => false, 'inputType' => 'input', 'options' => [], 'value', 'type' => false])
 <div class="h-full w-full" wire:ignore {{ $attributes->whereDoesntStartWith('wire:change') }}
     {{ $attributes->whereDoesntStartWith('wire:model') }}>
     <button class="relative h-full w-full cursor-pointer select-none text-blue-600 underline" @click.prevent
