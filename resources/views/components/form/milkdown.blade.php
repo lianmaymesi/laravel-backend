@@ -18,7 +18,7 @@
             </label>
         </div>
     @endif
-    <div x-data="{ ...toastUiEditor(@entangle($attributes->wire('model')), {{ $height }}, {{ $value }}) }" wire:ignore
+    <div x-data="{ ...toastUiEditor(@entangle($attributes->wire('model')), '{{ $height }}', '{{ $value }}') }" wire:ignore {{ $attributes->whereDoesntStartWith('wire:model') }}
         class="!grid !w-full !overflow-hidden rounded-lg border-none bg-slate-50 ring-1 ring-slate-950/10 focus-within:ring-2 focus-within:ring-indigo-600">
         <div x-ref="editor" class="!prose !w-full !min-w-full"></div>
     </div>
