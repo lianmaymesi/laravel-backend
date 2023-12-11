@@ -71,7 +71,11 @@
     <div @class([
         'lm-scroll overflow-y-auto overflow-x-auto border-x z-0',
         'h-[calc(100vh-335px)] md:h-[calc(100vh-303px)]' => $dataCount > 1,
+        'h-[calc(100vh-367px)] md:h-[calc(100vh-365px)]' =>
+            $dataCount > 1 && !$underTab,
         'h-[calc(100vh-274px)] md:h-[calc(100vh-239px)]' => $dataCount == 1,
+        'h-[calc(100vh-311px)] md:h-[calc(100vh-281px)]' =>
+            $dataCount == 1 && $underTab,
     ]) {{ $attributes }}>
         {{ $slot }}
     </div>
