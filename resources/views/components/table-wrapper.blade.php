@@ -1,4 +1,4 @@
-@props(['dataCount', 'columns', 'pagination'])
+@props(['dataCount', 'columns', 'pagination', 'underTab' => false])
 <div class="relative overflow-hidden rounded-b-xl rounded-t-3xl border-y bg-slate-50 lg:rounded-t-lg">
     <div class="sticky top-0 z-[99999] -mb-[2px] border-x border-b bg-gray-50 px-4 py-3">
         <div class="flex items-center justify-between">
@@ -70,10 +70,12 @@
     </div>
     <div @class([
         'lm-scroll overflow-y-auto overflow-x-auto border-x z-0',
-        'h-[calc(100vh-335px)] md:h-[calc(100vh-303px)]' => $dataCount > 1,
-        'h-[calc(100vh-367px)] md:h-[calc(100vh-365px)]' =>
+        'h-[calc(100vh-335px)] md:h-[calc(100vh-303px)]' =>
             $dataCount > 1 && !$underTab,
-        'h-[calc(100vh-274px)] md:h-[calc(100vh-239px)]' => $dataCount == 1,
+        'h-[calc(100vh-367px)] md:h-[calc(100vh-365px)]' =>
+            $dataCount > 1 && $underTab,
+        'h-[calc(100vh-274px)] md:h-[calc(100vh-239px)]' =>
+            $dataCount == 1 && !$underTab,
         'h-[calc(100vh-311px)] md:h-[calc(100vh-281px)]' =>
             $dataCount == 1 && $underTab,
     ]) {{ $attributes }}>
