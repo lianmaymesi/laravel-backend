@@ -7,8 +7,7 @@
     'options' => [],
     'value' => [],
 ])
-<div class="grid gap-y-1.5" {{ $attributes->whereStartsWith('x-ref') }}
-    @if ($attributes->whereStartsWith('x-ref')) wire:ignore @endif>
+<div class="grid gap-y-1.5" {{ $attributes->whereStartsWith('x-ref') }}>
     @if (!$labelOff)
         <div class="flex items-center justify-between">
             <label class="text-sm font-medium tracking-wide text-slate-950">
