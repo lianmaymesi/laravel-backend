@@ -18,7 +18,38 @@
             </label>
         </div>
     @endif
-    <div x-data="{ ...choiceSelect(@entangle($attributes->wire('model')), {{ $options }}, {{ $value }}) }" wire:ignore class="w-full max-w-sm" {{ $attributes->whereDoesntStartWith('x-ref') }}>
+    <div x-data="{
+        multiple: true,
+        value: {{ $value }},
+        options: {{ $options }},
+        model: @entangle($attributes->wire('model')),
+        init() {
+            this.$nextTick(() => {
+                let choices = new Choices(this.$refs.select, {
+                    removeItemButton: true,
+                    placeholderValue: 'All',
+                    allowHTML: false
+                })
+                let refreshChoices = () => {
+                    let selection = this.multiple ? this.value : [this.value]
+                    choices.clearStore()
+                    choices.setChoices(this.options.map(({ value, label }) => ({
+                        value,
+                        label,
+                        selected: selection.includes(value),
+                    })))
+                }
+                refreshChoices()
+                this.$refs.select.addEventListener('change', () => {
+                    this.value = choices.getValue(true)
+                    this.model = choices.getValue(true)
+                })
+                this.$watch('value', () => refreshChoices())
+                this.$watch('options', () => refreshChoices())
+                this.$watch('model', () => refreshChoices())
+            })
+        }
+    }" wire:ignore class="w-full max-w-sm" {{ $attributes->whereDoesntStartWith('x-ref') }}>
         <div class="min-w-0 flex-1">
             <select x-ref="select" :multiple="multiple"></select>
         </div>
@@ -36,5 +67,5 @@
 </div>
 
 @pushOnce('styles')
-    {{ Vite::useHotFile('vendor/laravel-backend/laravel-backend.hot')->useBuildDirectory('vendor/laravel-backend')->withEntryPoints(['resources/css/choices.css']) }}
+    {{ Vite::useHotFile('vendor/laravel-backend/laravel-backend.hot')->useBuildDirectory('vendor/laravel-backend')->withEntryPoints(['resources/css/choices.css', 'resources/js/choices.js']) }}
 @endPushOnce

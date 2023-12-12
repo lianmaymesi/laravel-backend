@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-aca153a6.css",
+    "file": "assets/app-d15690e9.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
@@ -15,8 +15,13 @@
     "src": "resources/css/toastui.css"
   },
   "resources/js/app.js": {
-    "file": "assets/app-ee88640d.js",
+    "file": "assets/app-963a2841.js",
     "isEntry": true,
     "src": "resources/js/app.js"
+  },
+  "resources/js/choices.js": {
+    "file": "assets/choices-7bd669eb.js",
+    "isEntry": true,
+    "src": "resources/js/choices.js"
   }
 }
