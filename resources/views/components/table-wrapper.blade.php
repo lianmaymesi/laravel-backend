@@ -1,4 +1,4 @@
-@props(['dataCount', 'columns', 'pagination', 'underTab' => false])
+@props(['dataCount' => 1, 'columns', 'pagination' => false, 'underTab' => false])
 <div class="relative overflow-hidden rounded-b-xl rounded-t-3xl border-y bg-slate-50 lg:rounded-t-lg">
     <div class="sticky top-0 z-[99999] -mb-[2px] border-x border-b bg-gray-50 px-4 py-3">
         <div class="flex items-center justify-between">
