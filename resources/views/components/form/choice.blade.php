@@ -20,8 +20,8 @@
     @endif
     <div x-data="{
         multiple: true,
-        value: {{ $value }},
-        options: {{ $options }},
+        value: @js($value),
+        options: @js($options),
         model: @entangle($attributes->wire('model')),
         init() {
             this.$nextTick(() => {
