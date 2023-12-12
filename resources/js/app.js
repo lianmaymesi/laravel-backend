@@ -91,7 +91,7 @@ document.addEventListener('alpine:init', function () {
         model: model,
         init() {
             this.$nextTick(() => {
-                let choices = new Choices(this.$refs.select, {
+                let choices = new Choices(this.$refs.selectdoc, {
                     removeItemButton: true,
                     placeholderValue: 'All',
                     allowHTML: false
