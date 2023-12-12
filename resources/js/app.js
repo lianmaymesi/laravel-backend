@@ -106,7 +106,7 @@ document.addEventListener('alpine:init', function () {
                     })))
                 }
                 refreshChoices()
-                this.$refs.select.addEventListener('change', () => {
+                this.$refs.selectdoc.addEventListener('change', () => {
                     this.value = choices.getValue(true)
                     this.model = choices.getValue(true)
                 })

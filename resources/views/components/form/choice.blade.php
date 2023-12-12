@@ -19,6 +19,7 @@
         </div>
     @endif
     <div class="w-full max-w-sm">
+        <div wire:ignore></div>
         <div class="min-w-0 flex-1">
             <select x-ref="selectdoc" multiple x-data="{ ...choiceSelect(@entangle($attributes->wire('model')), @js($options), @js($value)) }"></select>
         </div>
