@@ -7,7 +7,8 @@
     'options' => [],
     'value' => [],
 ])
-<div class="grid gap-y-1.5" {{ $attributes->whereStartsWith('x-ref') }} wire:ignore>
+<div class="grid gap-y-1.5" {{ $attributes->whereStartsWith('x-ref') }}
+    @if ($attributes->whereStartsWith('x-ref')) wire:ignore @endif>
     @if (!$labelOff)
         <div class="flex items-center justify-between">
             <label class="text-sm font-medium tracking-wide text-slate-950">
@@ -49,8 +50,8 @@
                 this.$watch('model', () => refreshChoices())
             })
         }
-    }" wire:ignore class="w-full max-w-sm" {{ $attributes->whereDoesntStartWith('x-ref') }}>
-        <div class="min-w-0 flex-1">
+    }" class="w-full max-w-sm" {{ $attributes->whereDoesntStartWith('x-ref') }}>
+        <div class="min-w-0 flex-1" wire:ignore>
             <select x-ref="select" :multiple="multiple"></select>
         </div>
     </div>
