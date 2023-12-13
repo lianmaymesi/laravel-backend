@@ -18,9 +18,9 @@
             </label>
         </div>
     @endif
-    <div class="w-full max-w-full">
+    <div class="w-full max-w-full" wire:ignore.self>
         <div class="min-w-0 flex-1">
-            <select x-ref="selectdoc" :multiple="multiple" x-data="{ ...choiceSelect(@entangle($attributes->wire('model')), @js($options), @js($value)) }" wire:ignore x-cloak></select>
+            <select x-ref="selectdoc" :multiple="multiple" x-data="{ ...choiceSelect(@entangle($attributes->wire('model')), @js($options), @js($value)) }" x-cloak></select>
         </div>
     </div>
     @if ($helpText)
