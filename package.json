@@ -20,6 +20,7 @@
         "@alpinejs/anchor": "^3.13.3",
         "@alpinejs/collapse": "^3.13.3",
         "@toast-ui/editor": "^3.2.2",
+        "alpinejs": "^3.13.3",
         "choices.js": "^10.2.0"
     }
 }
