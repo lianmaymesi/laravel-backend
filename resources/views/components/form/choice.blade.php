@@ -7,7 +7,7 @@
     'options' => [],
     'value' => [],
 ])
-<div class="grid gap-y-1.5" {{ $attributes->whereStartsWith('x-ref') }}>
+<div class="grid gap-y-1.5" {{ $attributes->whereStartsWith('x-ref') }} wire:ignore-self>
     @if (!$labelOff)
         <div class="flex items-center justify-between">
             <label class="text-sm font-medium tracking-wide text-slate-950">
@@ -18,7 +18,7 @@
             </label>
         </div>
     @endif
-    <div class="w-full max-w-full" wire:ignore.self>
+    <div class="w-full max-w-full" {{ $attributes->whereDoesntStartWith('wire:model') }}>
         <div class="min-w-0 flex-1">
             <select x-ref="selectdoc" :multiple="multiple" x-data="{ ...choiceSelect(@entangle($attributes->wire('model')), @js($options), @js($value)) }" x-cloak></select>
         </div>

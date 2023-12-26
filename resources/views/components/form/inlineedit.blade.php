@@ -28,7 +28,6 @@
         @if ($inputType === 'milkdown')
             <x-lb::form.milkdown :label-off="$labelOff" @click.away="toggleEditingState"
                 @keydown.window.escape="disableEditing" x-ref="input" x-show="isEditing"
-                {{ $attributes->whereDoesntStartWith('wire:change') }}
                 {{ $attributes->whereStartsWith('wire:model') }} :value="$value">
             </x-lb::form.milkdown>
         @endif

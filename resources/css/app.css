@@ -100,3 +100,7 @@
 .choices__list--dropdown, .choices__list[aria-expanded] {
     @apply !mt-2;
 }
+
+.select2 {
+    @apply !w-full;
+}

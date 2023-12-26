@@ -4,6 +4,7 @@
     'error' => '',
     'required' => false,
     'helpText' => '',
+    'readonly' => false,
 ])
 <div class="grid gap-y-1.5">
     @if (!$labelOff)
@@ -19,7 +20,7 @@
     <div
         class="flex overflow-hidden rounded-lg bg-slate-50 ring-1 ring-slate-950/10 focus-within:ring-2 focus-within:ring-indigo-600">
         <div class="min-w-0 flex-1">
-            <input {{ $attributes }} id="{{ str_slug($label) }}"
+            <input {{ $attributes }} id="{{ str_slug($label) }}" :readonly="$readonly"
                 class="block w-full border-none bg-transparent py-1.5 pe-3 ps-3 text-sm leading-6 text-slate-950 outline-none transition duration-75 placeholder:text-slate-500 focus:ring-0 disabled:text-slate-500 disabled:placeholder:text-slate-400" />
         </div>
     </div>
