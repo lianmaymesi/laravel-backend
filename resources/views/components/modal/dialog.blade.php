@@ -14,7 +14,7 @@
             {{ $body }}
         @endif
     </div>
-    <div class="sticky bottom-0 flex justify-end space-x-2 bg-gray-100 p-4">
+    <div class="sticky bottom-0 flex items-center justify-end space-x-2 bg-gray-100 p-4">
         @if ($savingProgress)
             <span wire:loading {{ $attributes->whereStartsWith('wire:target') }} @class(['text-sm'])>
                 Saving
