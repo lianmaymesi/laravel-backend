@@ -2,7 +2,6 @@
     'settingsUrl' => '',
     'imageUrl' => '',
     'name' => '',
-    'logoutUrl' => '',
     'initials' => '',
     'hasAvatar' => false,
     'logoUrl' => '',
@@ -116,7 +115,7 @@
                         <div
                             class="relative bottom-0 flex w-full items-center justify-between rounded-lg border border-slate-200 bg-slate-200/30 p-2">
                             <div class="flex items-center">
-                                @if ($hasAvatar)
+                                @if (!$hasAvatar)
                                     <button
                                         class="flex h-12 w-12 items-center justify-center rounded-full border border-blue-700 bg-blue-200 p-1 text-lg font-medium text-blue-800">
                                         {{ $initials }}
@@ -127,7 +126,7 @@
                                 @endif
                                 <div class="ml-4">
                                     <div class="text-lg font-semibold leading-none">{{ $name }}</div>
-                                    <a href="{{ $logoutUrl }}" class="text-sm">Logout</a>
+                                    <a wire:click="logout" class="text-sm">Logout</a>
                                 </div>
                             </div>
                             <a href="{{ $settingsUrl }}" class="rounded-full p-1 duration-200 hover:bg-slate-300/50">
