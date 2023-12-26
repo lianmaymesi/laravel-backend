@@ -5,6 +5,7 @@
     'logoutUrl' => '',
     'initials' => '',
     'hasAvatar' => false,
+    'logoUrl' => '',
 ])
 @php
     $maxWidth = [
@@ -51,7 +52,7 @@
                             </svg>
                         </button>
                         <div class="flex min-w-[238px] shrink-0 grow basis-auto items-center space-x-4">
-                            <img src="{{ asset('assets/catzket.png') }}" alt="" class="mb-1 h-6" />
+                            <img src="{{ $logoUrl }}" alt="" class="mb-1 h-6" />
                         </div>
                         <div class="hidden shrink grow basis-full justify-start align-middle lg:flex">
                             <div class="relative flex w-full max-w-lg items-center">
