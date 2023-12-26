@@ -51,9 +51,10 @@
                                     d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
                             </svg>
                         </button>
-                        <div class="flex min-w-[238px] shrink-0 grow basis-auto items-center space-x-4">
+                        <a href="/" wire:navigate
+                            class="ml-3 flex min-w-[238px] shrink-0 grow basis-auto items-center space-x-4">
                             <img src="{{ $logoUrl }}" alt="" class="mb-1 h-6" />
-                        </div>
+                        </a>
                         <div class="hidden shrink grow basis-full justify-start align-middle lg:flex">
                             <div class="relative flex w-full max-w-lg items-center">
                                 <div class="absolute pl-4 text-slate-400">
@@ -74,10 +75,6 @@
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
                                 </svg>
-                            </button>
-                            <button
-                                class="flex h-8 w-8 items-center justify-center rounded-full border border-blue-700 bg-blue-200 p-1.5 text-lg font-medium text-blue-800">
-                                LD
                             </button>
                         </div>
                     </div>
