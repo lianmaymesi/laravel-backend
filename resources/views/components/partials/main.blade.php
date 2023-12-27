@@ -126,10 +126,13 @@
                                 @endif
                                 <div class="ml-4">
                                     <div class="text-lg font-semibold leading-none">{{ $name }}</div>
-                                    <a wire:click="logout" class="text-sm">Logout</a>
+                                    @if (isset($logout))
+                                        {{ $logout }}
+                                    @endif
                                 </div>
                             </div>
-                            <a href="{{ $settingsUrl }}" class="rounded-full p-1 duration-200 hover:bg-slate-300/50">
+                            <a href="{{ $settingsUrl }}" class="rounded-full p-1 duration-200 hover:bg-slate-300/50"
+                                wire:navigate>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
                                     <path stroke-linecap="round" stroke-linejoin="round"
