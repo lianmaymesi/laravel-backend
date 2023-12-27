@@ -10,7 +10,6 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/js/app.js',
                 'resources/css/choices.css',
-                'resources/js/choices.js',
                 'resources/css/toastui.css'
             ],
             refresh: true,

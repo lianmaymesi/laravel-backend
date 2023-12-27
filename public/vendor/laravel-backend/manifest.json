@@ -15,13 +15,8 @@
     "src": "resources/css/toastui.css"
   },
   "resources/js/app.js": {
-    "file": "assets/app-e16c3e08.js",
+    "file": "assets/app-b4804360.js",
     "isEntry": true,
     "src": "resources/js/app.js"
-  },
-  "resources/js/choices.js": {
-    "file": "assets/choices-7bd669eb.js",
-    "isEntry": true,
-    "src": "resources/js/choices.js"
   }
 }

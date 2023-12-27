@@ -2,6 +2,7 @@ import { Livewire, Alpine } from "../../vendor/livewire/livewire/dist/livewire.e
 import Collapse from "@alpinejs/collapse";
 import Anchor from "@alpinejs/anchor";
 import Editor from "@toast-ui/editor";
+import Choices from "choices.js";
 
 const breakpoint = 1024;
 document.addEventListener('alpine:init', function () {
@@ -80,6 +81,39 @@ document.addEventListener('alpine:init', function () {
                 this.markdown = editor.getMarkdown();
                 this.value = editor.getMarkdown();
             });
+        }
+    }));
+
+    Alpine.data('choiceSelect', (model, options, value) => ({
+        multiple: true,
+        value: value,
+        options: options,
+        model: model,
+        init() {
+            this.$nextTick(() => {
+                let choices = new Choices(this.$refs.selectdoc, {
+                    removeItemButton: true,
+                    placeholderValue: 'All',
+                    allowHTML: false
+                })
+                let refreshChoices = () => {
+                    let selection = this.multiple ? this.value : [this.value]
+                    choices.clearStore()
+                    choices.setChoices(this.options.map(({ value, label }) => ({
+                        value,
+                        label,
+                        selected: selection.includes(value),
+                    })))
+                }
+                refreshChoices()
+                this.$refs.selectdoc.addEventListener('change', () => {
+                    this.value = choices.getValue(true)
+                    this.model = choices.getValue(true)
+                })
+                this.$watch('value', () => refreshChoices())
+                this.$watch('options', () => refreshChoices())
+                this.$watch('model', () => refreshChoices())
+            })
         }
     }));
 });
