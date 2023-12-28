@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-backend` will be documented in this file.
 
+## v0.5.0 - 2023-12-28
+
+`wire:navigate` is optional by using `no-navigate` for anchor components
+
 ## v0.4.6 - 2023-12-27
 
 **Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v0.4.5...v0.4.6
