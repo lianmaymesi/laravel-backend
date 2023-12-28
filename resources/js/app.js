@@ -71,7 +71,7 @@ document.addEventListener('alpine:init', function () {
                 el: this.$refs.editor,
                 height: height,
                 initialEditType: 'markdown',
-                initialValue: this.markdown,
+                initialValue: this.value,
                 previewHighlight: true,
                 viewer: false,
                 usageStatistics: false,
