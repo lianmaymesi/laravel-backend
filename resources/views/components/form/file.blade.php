@@ -38,7 +38,7 @@
                 </div>
             @endif
         @endif
-        <input {{ $attributes }} type="file"
+        <input {{ $attributes }} type="file" name="{{ $label . md5($label) }}" id="{{ $label . md5($label) }}"
             class="block w-full text-sm text-slate-500 file:mr-4 file:rounded-full file:border-0 file:bg-indigo-50 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-indigo-700 hover:file:bg-indigo-100" />
     </div>
     @if ($helpText)

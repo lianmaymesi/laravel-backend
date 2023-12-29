@@ -8,7 +8,8 @@
                     @if (isset($tableControls))
                         {{ $tableControls }}
                     @endif
-                    <x-lb::form.input wire:model.live="search" label-off placeholder="Search"></x-lb::form.input>
+                    <x-lb::form.input wire:model.live="search" label-off placeholder="Search" label="Search">
+                    </x-lb::form.input>
                     <x-lb::form.select wire:model.live="perPage" label-off>
                         <option value="10">10</option>
                         <option value="50">50</option>
