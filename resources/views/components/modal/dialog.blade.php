@@ -30,7 +30,7 @@
         @if (isset($customClose))
             {{ $customClose }}
         @else
-            <x-lb::buttons-bg.disabled x-on:click="show = !show" type="button">
+            <x-lb::buttons-bg.disabled x-on:click="show = !show">
                 Close
             </x-lb::buttons-bg.disabled>
         @endif
