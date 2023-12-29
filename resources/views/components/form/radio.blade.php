@@ -2,6 +2,7 @@
     'error' => '',
     'helpText' => '',
     'labelOff' => false,
+    'label' => '',
 ])
 <div @class(['grid', 'gap-y-1.5' => $helpText || $error])>
     <label class="inline-flex items-center">

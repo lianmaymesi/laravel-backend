@@ -1,4 +1,10 @@
-@props(['error' => '', 'helpText' => '', 'temporary' => null, 'hasImage' => false])
+@props([
+    'error' => '',
+    'helpText' => '',
+    'temporary' => null,
+    'hasImage' => false,
+    'label' => '',
+])
 <div class="grid gap-y-1.5">
     <div @class([
         'grid gap-y-4' => $attributes->has('multiple'),
