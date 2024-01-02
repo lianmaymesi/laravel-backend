@@ -2,6 +2,16 @@
 
 All notable changes to `laravel-backend` will be documented in this file.
 
+## v0.6.0 - 2024-01-02
+
+Added Path on navigation item.
+
+### What's Changed
+
+* Bump aglipanci/laravel-pint-action from 2.3.0 to 2.3.1 by @dependabot in https://github.com/lianmaymesi/laravel-backend/pull/2
+
+**Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v0.5.7...v0.6.0
+
 ## v0.5.6 - 2023-12-29
 
 **Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v0.5.5...v0.5.6
