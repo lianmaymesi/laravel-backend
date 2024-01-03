@@ -12,7 +12,11 @@ class LaravelBackendServiceProvider extends PackageServiceProvider
         if (app()->runningInConsole()) {
             $this->publishes([
                 __DIR__ . '/../public/vendor/laravel-backend' => public_path('vendor/laravel-backend'),
-            ], ['laravel-backend-assets', 'laravel-assets']);
+            ], ['laravel-backend-assets']);
+
+            $this->publishes([
+                __DIR__ . '/../public/assets' => public_path('external'),
+            ], ['laravel-backend-external-assets']);
         }
 
         $package
