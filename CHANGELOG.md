@@ -2,6 +2,12 @@
 
 All notable changes to `laravel-backend` will be documented in this file.
 
+## v0.7.0 - 2024-01-03
+
+Add new Component `<x-lb::form.date-range></x-lb::form.date-range>`
+
+**Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v0.6.0...v0.7.0
+
 ## v0.6.0 - 2024-01-02
 
 Added Path on navigation item.
