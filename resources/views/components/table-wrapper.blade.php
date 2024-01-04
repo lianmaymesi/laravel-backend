@@ -30,7 +30,7 @@
                             <div class="px-4 pb-6 pt-4" @click.away="showFilters = false">
                                 <div class="flex items-center justify-between">
                                     <div class="font-semibold">Filters</div>
-                                    <x-lb::buttons.danger>Reset</x-lb::buttons.danger>
+                                    <x-lb::buttons.danger wire:click="resetFilter">Reset</x-lb::buttons.danger>
                                 </div>
                                 <div class="mt-4 grid gap-y-4">
                                     @if (isset($filters))
@@ -53,7 +53,7 @@
                             <div class="px-4 pb-6 pt-4" @click.away="showColumns = false">
                                 <div class="flex items-center justify-between">
                                     <div class="font-semibold">Columns</div>
-                                    <x-lb::buttons.danger>Reset</x-lb::buttons.danger>
+                                    <x-lb::buttons.danger wire:click="resetColumns">Reset</x-lb::buttons.danger>
                                 </div>
                                 <div class="mt-4 grid gap-y-4">
                                     @foreach ($columns as $key => $column)
