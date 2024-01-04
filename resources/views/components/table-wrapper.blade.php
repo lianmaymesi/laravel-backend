@@ -6,7 +6,7 @@
     'hideTableProps' => false,
     'filtersCount' => 0,
     'columnsCount' => 0,
-    'searchBar' => true,
+    'searchBar',
 ])
 <div class="relative overflow-hidden rounded-b-xl rounded-t-3xl border-y bg-slate-50 lg:rounded-t-lg">
     @if (!$hideTableProps)
