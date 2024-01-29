@@ -2,6 +2,12 @@
 
 All notable changes to `laravel-backend` will be documented in this file.
 
+## v0.7.7 - 2024-01-29
+
+**Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v0.7.6...v0.7.7
+
+Fixed unclosed html tags
+
 ## v0.7.6 - 2024-01-29
 
 **Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v0.7.5...v0.7.6
