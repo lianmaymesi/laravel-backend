@@ -72,7 +72,7 @@ document.addEventListener('alpine:init', function () {
             let editor = new Editor({
                 el: this.$refs.editor,
                 height: height,
-                initialEditType: 'markdown',
+                initialEditType: 'wysiwyg',
                 initialValue: this.value,
                 previewHighlight: true,
                 viewer: false,
@@ -80,8 +80,8 @@ document.addEventListener('alpine:init', function () {
                 previewStyle: 'tab',
             });
             editor.on('change', () => {
-                this.markdown = editor.getMarkdown();
-                this.value = editor.getMarkdown();
+                this.markdown = editor.getHTML();
+                this.value = editor.getHTML();
             });
         }
     }));

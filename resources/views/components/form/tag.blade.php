@@ -44,8 +44,8 @@
         })
         return tag != undefined
     },
-}">
-    <div class="relative grid w-full gap-y-1.5">
+}" class="relative grid w-full gap-y-1.5">
+    <div>
         @if (!$labelOff)
             <div class="flex items-center justify-between">
                 <label class="text-sm font-medium tracking-wide text-slate-950">
