@@ -44,24 +44,26 @@
         })
         return tag != undefined
     },
-}" class="relative grid w-full gap-y-1.5" wire:ignore>
-    @if (!$labelOff)
-        <div class="flex items-center justify-between">
-            <label class="text-sm font-medium tracking-wide text-slate-950">
-                {{ $label }}
-                @if ($required)
-                    <span class="text-red-600">*</span>
-                @endif
-            </label>
-        </div>
-    @endif
-    <div @click.away="clearSearch()" class="w-full" @keydown.escape="clearSearch()">
-        <div class="relative" @keydown.enter.prevent="addTag(textInput)">
-            <div
-                class="flex overflow-hidden rounded-lg bg-slate-50 ring-1 ring-slate-950/10 focus-within:ring-2 focus-within:ring-indigo-600">
-                <input type="text" x-model="textInput" x-ref="textInput" @input="search($event.target.value)"
-                    class="block w-full border-none bg-transparent py-1.5 pe-3 ps-3 text-sm leading-6 text-slate-950 outline-none transition duration-75 placeholder:text-slate-500 focus:ring-0 disabled:text-slate-500 disabled:placeholder:text-slate-400"
-                    placeholder="{{ $label }}">
+}">
+    <div class="relative grid w-full gap-y-1.5">
+        @if (!$labelOff)
+            <div class="flex items-center justify-between">
+                <label class="text-sm font-medium tracking-wide text-slate-950">
+                    {{ $label }}
+                    @if ($required)
+                        <span class="text-red-600">*</span>
+                    @endif
+                </label>
+            </div>
+        @endif
+        <div @click.away="clearSearch()" class="w-full" @keydown.escape="clearSearch()">
+            <div class="relative" @keydown.enter.prevent="addTag(textInput)">
+                <div
+                    class="flex overflow-hidden rounded-lg bg-slate-50 ring-1 ring-slate-950/10 focus-within:ring-2 focus-within:ring-indigo-600">
+                    <input type="text" x-model="textInput" x-ref="textInput" @input="search($event.target.value)"
+                        class="block w-full border-none bg-transparent py-1.5 pe-3 ps-3 text-sm leading-6 text-slate-950 outline-none transition duration-75 placeholder:text-slate-500 focus:ring-0 disabled:text-slate-500 disabled:placeholder:text-slate-400"
+                        placeholder="{{ $label }}" />
+                </div>
             </div>
             <div :class="[open ? 'block' : 'hidden']">
                 <div class="absolute left-0 z-[9999] mt-2 w-full">
@@ -101,6 +103,6 @@
         </div>
     @endif
     @if ($error)
-        <div class="text-sm text-red-500">{{ $error }}</span>
+        <div class="text-sm text-red-500">{{ $error }}</div>
     @endif
 </div>
