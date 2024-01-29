@@ -2,6 +2,16 @@
 
 All notable changes to `laravel-backend` will be documented in this file.
 
+## v0.7.5 - 2024-01-29
+
+### What's Changed
+
+* Bump vite from 4.5.1 to 4.5.2 by @dependabot in https://github.com/lianmaymesi/laravel-backend/pull/3
+* Added new Component `tag` in the form
+* Chunked the heavy js files to load faster
+
+**Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v0.7.4...v0.7.5
+
 ## v0.7.4 - 2024-01-04
 
 **Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v0.7.3...v0.7.4
