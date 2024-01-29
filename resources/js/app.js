@@ -4,7 +4,7 @@ import Anchor from "@alpinejs/anchor";
 import Editor from "@toast-ui/editor";
 import Choices from "choices.js";
 
-window.$ = window.jQuery = jQuery;
+// window.$ = window.jQuery = jQuery;
 
 const breakpoint = 1024;
 document.addEventListener('alpine:init', function () {
@@ -77,7 +77,7 @@ document.addEventListener('alpine:init', function () {
                 previewHighlight: true,
                 viewer: false,
                 usageStatistics: false,
-                previewStyle: 'vertical',
+                previewStyle: 'tab',
             });
             editor.on('change', () => {
                 this.markdown = editor.getMarkdown();
