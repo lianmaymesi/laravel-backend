@@ -3,6 +3,7 @@ import Collapse from "@alpinejs/collapse";
 import Anchor from "@alpinejs/anchor";
 import Editor from "@toast-ui/editor";
 import Choices from "choices.js";
+import Clipboard from "@ryangjchandler/alpine-clipboard";
 
 // window.$ = window.jQuery = jQuery;
 
@@ -121,5 +122,6 @@ document.addEventListener('alpine:init', function () {
 
 Alpine.plugin(Collapse);
 Alpine.plugin(Anchor);
+Alpine.plugin(Clipboard);
 
 Livewire.start();

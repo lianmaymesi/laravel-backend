@@ -2,6 +2,9 @@
   "_@alpinejs-f36a8153.js": {
     "file": "assets/@alpinejs-f36a8153.js"
   },
+  "_@ryangjchandler-4b32d34b.js": {
+    "file": "assets/@ryangjchandler-4b32d34b.js"
+  },
   "_@toast-ui-cd09f305.js": {
     "file": "assets/@toast-ui-cd09f305.js",
     "imports": [
@@ -84,7 +87,7 @@
     "file": "assets/w3c-keyname-a25e4cc1.js"
   },
   "resources/css/app.css": {
-    "file": "assets/app-a2821239.css",
+    "file": "assets/app-227ee719.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
@@ -104,11 +107,12 @@
     "src": "resources/css/toastui.css"
   },
   "resources/js/app.js": {
-    "file": "assets/app-681e9a80.js",
+    "file": "assets/app-f6a9c1e2.js",
     "imports": [
       "_@alpinejs-f36a8153.js",
       "_@toast-ui-cd09f305.js",
       "_choices.js-36ec076e.js",
+      "_@ryangjchandler-4b32d34b.js",
       "_prosemirror-model-3f3367be.js",
       "_orderedmap-1b52af60.js",
       "_prosemirror-view-db9c0abf.js",
