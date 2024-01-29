@@ -71,7 +71,7 @@ document.addEventListener('alpine:init', function () {
         init() {
             let editor = new Editor({
                 el: this.$refs.editor,
-                height: height,
+                minHeight: height,
                 initialEditType: 'wysiwyg',
                 initialValue: this.value,
                 previewHighlight: true,
@@ -81,7 +81,6 @@ document.addEventListener('alpine:init', function () {
             });
             editor.on('change', () => {
                 this.markdown = editor.getHTML();
-                this.value = editor.getHTML();
             });
         }
     }));

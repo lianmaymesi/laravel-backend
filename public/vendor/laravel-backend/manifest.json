@@ -104,7 +104,7 @@
     "src": "resources/css/toastui.css"
   },
   "resources/js/app.js": {
-    "file": "assets/app-97c50cf8.js",
+    "file": "assets/app-681e9a80.js",
     "imports": [
       "_@alpinejs-f36a8153.js",
       "_@toast-ui-cd09f305.js",
