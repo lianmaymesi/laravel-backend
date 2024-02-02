@@ -2,6 +2,12 @@
 
 All notable changes to `laravel-backend` will be documented in this file.
 
+## v0.7.10 - 2024-01-29
+
+Added Clipboard component `copy-text`
+
+**Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v0.7.9...v0.7.10
+
 ## v0.7.9 - 2024-01-29
 
 **Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v0.7.8...v0.7.9
