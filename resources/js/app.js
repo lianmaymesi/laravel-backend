@@ -5,9 +5,8 @@ import Editor from "@toast-ui/editor";
 import Choices from "choices.js";
 import Clipboard from "@ryangjchandler/alpine-clipboard";
 
-// window.$ = window.jQuery = jQuery;
-
 const breakpoint = 1024;
+
 document.addEventListener('alpine:init', function () {
     Alpine.data('sidebar', (persist = false) => ({
         open: {
