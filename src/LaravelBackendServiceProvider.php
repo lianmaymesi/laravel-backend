@@ -2,7 +2,6 @@
 
 namespace Lianmaymesi\LaravelBackend;
 
-use Illuminate\Support\Facades\Blade;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
