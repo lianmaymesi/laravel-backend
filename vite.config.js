@@ -8,18 +8,19 @@ export default defineConfig({
             buildDirectory: 'vendor/laravel-backend',
             input: [
                 'resources/css/app.css',
-                'resources/js/app.js',
-                'resources/css/daterange.css',
+                'resources/css/flatpickr.css',
                 'resources/css/choices.css',
-                'resources/css/toastui.css'
+                'resources/css/toastui.css',
+                'resources/css/trix.css',
+                'resources/js/app.js',
             ],
             refresh: true,
         }),
-        splitVendorChunkPlugin(),
+        splitVendorChunkPlugin()
     ],
     build: {
         rollupOptions: {
-            output:{
+            output: {
                 manualChunks(id) {
                     if (id.includes('node_modules')) {
                         return id.toString().split('node_modules/')[1].split('/')[0].toString();
@@ -27,5 +28,5 @@ export default defineConfig({
                 }
             }
         }
-    }
+    },
 });

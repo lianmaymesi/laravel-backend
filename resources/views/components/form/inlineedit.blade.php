@@ -1,7 +1,7 @@
 @props(['labelOff' => false, 'inputType' => 'input', 'options' => [], 'value', 'type' => false])
-<div class="h-full w-full" wire:ignore {{ $attributes->whereDoesntStartWith('wire:change') }}
+<div class="w-full h-full" wire:ignore {{ $attributes->whereDoesntStartWith('wire:change') }}
     {{ $attributes->whereDoesntStartWith('wire:model') }}>
-    <button class="relative h-full w-full cursor-pointer select-none text-blue-600 underline" @click.prevent
+    <button class="relative w-full h-full text-blue-600 underline cursor-pointer select-none" @click.prevent
         @dblclick="toggleEditingState" x-show="!isEditing">
         {{ $slot }}
     </button>
@@ -25,11 +25,10 @@
                 {{ $value }}
             </x-lb::form.textarea>
         @endif
-        @if ($inputType === 'milkdown')
-            <x-lb::form.milkdown :label-off="$labelOff" @click.away="toggleEditingState"
-                @keydown.window.escape="disableEditing" x-ref="input" x-show="isEditing"
-                {{ $attributes->whereStartsWith('wire:model') }} :value="$value">
-            </x-lb::form.milkdown>
+        @if ($inputType === 'trix')
+            <x-lb::form.trix :label-off="$labelOff" @click.away="toggleEditingState" @keydown.window.escape="disableEditing"
+                x-ref="input" x-show="isEditing" {{ $attributes->whereStartsWith('wire:model') }} :value="$value">
+            </x-lb::form.trix>
         @endif
     </div>
 </div>

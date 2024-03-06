@@ -39,9 +39,9 @@
                 this.$watch('value', () => {
                     $(this.$refs.picker).data('daterangepicker').setStartDate(this.value[0])
                     $(this.$refs.picker).data('daterangepicker').setEndDate(this.value[1])
-                })
+                });
             }
-        }">
+        }" wire:ignore>
         <div class="flex-1 min-w-0">
             <input type="text" x-ref="picker"
                 class="block w-full border-none bg-transparent py-1.5 pe-3 ps-3 text-sm leading-6 text-slate-950 outline-none transition duration-75 placeholder:text-slate-500 focus:ring-0 disabled:text-slate-500 disabled:placeholder:text-slate-400" />
@@ -59,12 +59,8 @@
     @endif
 </div>
 
-@pushOnce('styles')
-    {{ Vite::useHotFile('vendor/laravel-backend/laravel-backend.hot')->useBuildDirectory('vendor/laravel-backend')->withEntryPoints(['resources/css/daterange.css']) }}
-@endPushOnce
-
 @pushOnce('scripts')
-    <script type="text/javascript" src="/external/jquery.js"></script>
-    <script type="text/javascript" src="/external/moment.js"></script>
-    <script type="text/javascript" src="/external/daterange.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 @endPushOnce
