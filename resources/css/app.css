@@ -1,6 +1,5 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
 
 .toastui-editor-defaultUI-toolbar button {
     @apply !m-0.5;
@@ -101,3 +100,5 @@
 .select2 {
     @apply !w-full;
 }
+
+@tailwind utilities;

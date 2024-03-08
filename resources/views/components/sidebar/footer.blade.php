@@ -1,6 +1,6 @@
 @props(['savingProgress' => true])
-<footer class="relative flex-auto touch-auto p-4">
-    <div class="flex items-center justify-end space-x-2">
+<footer class="relative flex-auto p-4 bg-white border-t touch-auto z-[99999]">
+    <div class="flex items-center justify-between space-x-2">
         @if ($savingProgress)
             <span wire:loading {{ $attributes->whereStartsWith('wire:target') }} @class(['text-sm'])>
                 Saving
