@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-backend` will be documented in this file.
 
+## v0.8.1 - 2024-03-08
+
+**Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v0.8.0...v0.8.1
+
 ## v0.8.0 - 2024-03-08
 
 - Added Some components `action` on each page.
