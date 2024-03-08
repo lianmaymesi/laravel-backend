@@ -19,10 +19,10 @@
     <div class=""
         :class="{
             'absolute shadow-md z-50 text-left right-0 top-12 py-4 px-2 flex flex-col items-start w-full !min-w-[240px] bg-white border rounded-lg gap-y-2': show &
-                window.innerWidth < 1024,
-            'flex items-center gap-x-2': window.innerWidth > 1024
+                width < 1024,
+            'flex items-center gap-x-2': width > 1024
         }"
-        x-show="show || window.innerWidth > 1024" @click.outside="show = false" style="display: none;">
+        x-show="show || width > 1024" @click.outside="show = false" style="display: none;">
         {{ $slot }}
     </div>
 </div>
