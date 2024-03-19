@@ -147,7 +147,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="lm-scroll-hidden mt-4 grow overflow-hidden overflow-y-auto h-[calc(100vh-142px)]"
+                    <div class="lm-scroll-hidden mt-4 grow overflow-hidden overflow-y-auto h-[calc(100vh-161px)]"
                         :class="{
                             'w-full lg:w-[calc(100vh-256px)]': isAboveBreakPoint,
                             'relative w-full z-0': !isAboveBreakPoint
