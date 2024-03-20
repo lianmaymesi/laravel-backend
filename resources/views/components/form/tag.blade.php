@@ -68,9 +68,9 @@
             <div :class="[open ? 'block' : 'hidden']">
                 <div class="absolute left-0 z-[9999] mt-2 w-full">
                     <div
-                        class="rounded border border-gray-300 bg-white py-1 text-sm shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                        class="py-1 text-sm bg-white border border-gray-300 rounded shadow-lg dark:border-slate-700 dark:bg-slate-900">
                         <a @click.prevent="addTag(textInput)"
-                            class="block cursor-pointer px-5 py-1 hover:bg-indigo-600 hover:text-white">
+                            class="block px-5 py-1 cursor-pointer hover:bg-indigo-600 hover:text-white">
                             Add tag "<span class="font-semibold" x-text="textInput"></span>"
                         </a>
                     </div>
@@ -85,11 +85,11 @@
     </div>
     <div class="mt-0.5 flex flex-wrap gap-2 overflow-hidden">
         <template x-for="(tag, index) in tags">
-            <div class="inline-flex items-center gap-1 rounded bg-indigo-600 text-xs font-medium text-white">
+            <div class="inline-flex items-center gap-1 text-xs font-medium text-white bg-indigo-600 rounded">
                 <span class="max-w-xs truncate py-0.5 pl-2 pr-1 leading-relaxed dark:text-white" x-text="tag"></span>
                 <button @click.prevent="removeTag(index)"
-                    class="inline-block h-6 w-6 align-middle text-indigo-100 hover:text-white focus:outline-none">
-                    <svg class="mx-auto h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    class="inline-block w-6 h-6 text-indigo-100 align-middle hover:text-white focus:outline-none">
+                    <svg class="w-6 h-6 mx-auto fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path fill-rule="evenodd"
                             d="M15.78 14.36a1 1 0 0 1-1.42 1.42l-2.82-2.83-2.83 2.83a1 1 0 1 1-1.42-1.42l2.83-2.82L7.3 8.7a1 1 0 0 1 1.42-1.42l2.83 2.83 2.82-2.83a1 1 0 0 1 1.42 1.42l-2.83 2.83 2.83 2.82z" />
                     </svg>
@@ -103,6 +103,6 @@
         </div>
     @endif
     @if ($error)
-        <div class="text-sm text-red-500">{{ $error }}</div>
+        <x-lb::error>{{ $error }}</x-lb::error>
     @endif
 </div>

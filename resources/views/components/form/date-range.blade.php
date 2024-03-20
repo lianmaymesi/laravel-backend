@@ -53,9 +53,7 @@
         </div>
     @endif
     @if ($error)
-        <div class="text-sm text-red-500">
-            {{ $error }}
-        </div>
+        <x-lb::error>{{ $error }}</x-lb::error>
     @endif
 </div>
 

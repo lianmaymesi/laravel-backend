@@ -9,9 +9,8 @@
         'inline-flex items-center' => !$labelOff,
         'leading-none flex' => $labelOff,
     ])>
-        <input type="checkbox"
-               {{ $attributes }}
-               class="h-4 w-4 rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring-0 focus:ring-indigo-200 focus:ring-opacity-50 focus:ring-offset-0" />
+        <input type="checkbox" {{ $attributes }}
+            class="w-4 h-4 text-indigo-600 border-gray-300 rounded shadow-sm focus:border-indigo-300 focus:ring-0 focus:ring-indigo-200 focus:ring-opacity-50 focus:ring-offset-0" />
         @if (!$labelOff)
             <span class="ml-2 text-sm">{{ $slot }}</span>
         @endif
@@ -22,8 +21,6 @@
         </div>
     @endif
     @if ($error)
-        <div class="text-sm text-red-500">
-            {{ $error }}
-        </div>
+        <x-lb::error>{{ $error }}</x-lb::error>
     @endif
 </div>
