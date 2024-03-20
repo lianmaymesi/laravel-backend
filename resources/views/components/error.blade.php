@@ -1,3 +1,3 @@
-<div class="text-sm text-red-500" x-init="$el.closest('form').closest('label').scrollIntoView()">
+<div class="text-sm text-red-500" aria-live="assertive" x-init="$el.closest('form').querySelector('[aria-invalid=\'true\']').closest('label').scrollIntoView()">
     {{ $slot }}
 </div>
