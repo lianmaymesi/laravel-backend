@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-backend` will be documented in this file.
 
+## v0.8.4 - 2024-03-20
+
+**Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v0.8.3...v0.8.4
+
 ## v0.8.3 - 2024-03-20
 
 - Added `<x-lb::error><x-lb::error>`
