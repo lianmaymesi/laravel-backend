@@ -9,7 +9,8 @@
 <div class="grid gap-y-1.5">
     @if (!$labelOff)
         <div class="flex items-center justify-between">
-            <label for="{{ str_slug($label) }}" class="text-sm font-medium tracking-wide text-slate-950">
+            <label for="{{ str_slug($label) }}" class="text-sm font-medium tracking-wide text-slate-950"
+                aria-invalid="{{ $error ? 'true' : 'false' }}">
                 {{ $label }}
                 @if ($required)
                     <span class="text-red-600">*</span>

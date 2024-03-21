@@ -10,7 +10,7 @@
         'flex items-center gap-x-4' => !$attributes->has('multiple'),
     ])>
         {{ $slot }}
-        <input {{ $attributes }} type="file"
+        <input {{ $attributes }} type="file" aria-invalid="{{ $error ? 'true' : 'false' }}"
             class="block w-full text-sm text-slate-500 file:mr-4 file:rounded-full file:border-0 file:bg-indigo-50 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-indigo-700 hover:file:bg-indigo-100" />
     </div>
     @if ($helpText)
