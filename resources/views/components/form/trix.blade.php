@@ -9,7 +9,7 @@
 @php
     $id = $label ? str_replace(' ', '', $label) : uniqid();
 @endphp
-<div class="grid gap-y-1.5">
+<div class="grid gap-y-1.5 grid-cols-1 relative">
     @if (!$labelOff)
         <div class="flex items-center justify-between">
             <label for="" class="text-sm font-medium tracking-wide text-slate-950"

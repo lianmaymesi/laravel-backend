@@ -45,18 +45,18 @@
         return tag != undefined
     },
 }" class="relative grid w-full gap-y-1.5">
+    @if (!$labelOff)
+        <div class="flex items-center justify-between">
+            <label class="text-sm font-medium tracking-wide text-slate-950"
+                aria-invalid="{{ $error ? 'true' : 'false' }}">
+                {{ $label }}
+                @if ($required)
+                    <span class="text-red-600">*</span>
+                @endif
+            </label>
+        </div>
+    @endif
     <div>
-        @if (!$labelOff)
-            <div class="flex items-center justify-between">
-                <label class="text-sm font-medium tracking-wide text-slate-950"
-                    aria-invalid="{{ $error ? 'true' : 'false' }}">
-                    {{ $label }}
-                    @if ($required)
-                        <span class="text-red-600">*</span>
-                    @endif
-                </label>
-            </div>
-        @endif
         <div @click.away="clearSearch()" class="w-full" @keydown.escape="clearSearch()">
             <div class="relative" @keydown.enter.prevent="addTag(textInput)">
                 <div
