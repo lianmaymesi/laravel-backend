@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-backend` will be documented in this file.
 
+## v0.8.7 - 2024-03-26
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 1.6.0 to 2.0.0 by @dependabot in https://github.com/lianmaymesi/laravel-backend/pull/4
+
+**Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v0.8.6...v0.8.7
+
 ## v0.8.6 - 2024-03-25
 
 **Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v0.8.5...v0.8.6
