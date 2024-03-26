@@ -17,9 +17,17 @@
     ][$maxWidth ?? '2xl'];
 @endphp
 <div @class([
-    'flex flex-col gap-y-4 w-full',
+    'relative w-full',
     $maxWidth,
-    'sticky top-0 md:h-[calc(100vh-197px)] overflow-hidden overflow-y-auto lm-scroll-hidden' => $sticky,
+    'sticky top-0 md:h-[calc(100vh-181px)] overflow-hidden overflow-y-auto lm-scroll-hidden' => $sticky,
 ])>
-    {{ $slot }}
+    <div @class([
+        'flex flex-col gap-y-4 w-full mb-2',
+        'sticky top-0 md:h-[calc(100vh-189px)] overflow-hidden overflow-y-auto lm-scroll-hidden' => $sticky,
+    ])>
+        {{ $slot }}
+    </div>
+    @if (isset($stickyContent))
+        {{ $stickyContent }}
+    @endif
 </div>
