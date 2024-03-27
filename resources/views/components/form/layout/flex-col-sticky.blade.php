@@ -23,7 +23,7 @@
 ])>
     <div @class([
         'flex flex-col gap-y-4 w-full mb-2',
-        'sticky top-0 md:h-[calc(100vh-189px)] overflow-hidden overflow-y-auto lm-scroll-hidden' => $sticky,
+        'sticky top-0 md:h-[calc(100vh-269px)] overflow-hidden overflow-y-auto lm-scroll-hidden' => $sticky,
     ])>
         {{ $slot }}
     </div>

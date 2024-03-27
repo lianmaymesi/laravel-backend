@@ -1,6 +1,6 @@
 {
     "name": "laravel-backend",
-    "version": "0.8.6",
+    "version": "0.8.9",
     "description": "A simple backend UI for Laravel Projects.",
     "private": true,
     "scripts": {
