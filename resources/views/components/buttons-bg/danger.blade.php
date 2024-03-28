@@ -1,10 +1,9 @@
 <button {{ $attributes }}
-    class="rounded-lg bg-red-600 px-3 py-2 text-sm font-medium leading-none text-red-100 duration-150 hover:bg-red-700 hover:text-red-50">
-    <div class="flex items-center justify-center">
+    class="px-3 py-2 text-sm font-medium leading-none text-red-100 duration-150 bg-red-600 rounded-lg hover:bg-red-700 hover:text-red-50">
+    <div class="flex items-center justify-center gap-x-1.5">
         @if ($attributes->has('wire:target'))
-            <svg wire:loading.delay.default class="mr-1.5 h-[15px] w-[15px] animate-spin"
-                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                {{ $attributes->whereStartsWith('wire:target') }}>
+            <svg wire:loading.delay.default class="h-[15px] w-[15px] animate-spin" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 24 24" {{ $attributes->whereStartsWith('wire:target') }}>
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
                 </circle>
                 <path class="opacity-75" fill="currentColor"

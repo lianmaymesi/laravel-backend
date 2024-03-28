@@ -1,4 +1,7 @@
 @tailwind base;
+[dir="rtl"] .direction-ltr {
+    direction: ltr;
+}
 @tailwind components;
 
 .toastui-editor-defaultUI-toolbar button {
@@ -99,6 +102,38 @@
 
 .select2 {
     @apply !w-full;
+}
+
+[dir="rtl"] .flatpickr-calendar {
+    .dayContainer, .flatpickr-weekdaycontainer {
+        flex-direction: row-reverse;
+    }
+    .flatpickr-months {
+        .flatpickr-month {
+            height: 32px;
+        }
+        .flatpickr-prev-month.flatpickr-prev-month {
+            left: unset;
+            right: 0;
+            transform: scaleX(-1);
+        }
+        .flatpickr-next-month.flatpickr-next-month {
+            right: unset;
+            left: 0;
+            transform: scaleX(-1);
+        }
+    }
+}
+[dir="rtl"] .flatpickr-day {
+    &.selected.startRange, &.startRange.startRange, &.endRange.startRange {
+        border-radius: 0 50px 50px 0;
+    }
+    &.selected.endRange, &.startRange.endRange, &.endRange.endRange {
+        border-radius: 50px 0 0 50px;
+    }
+    &.selected.startRange + .endRange:not(:nth-child(7n+1)), &.startRange.startRange + .endRange:not(:nth-child(7n+1)), &.endRange.startRange + .endRange:not(:nth-child(7n+1)) {
+        box-shadow: 10px 0 0 #569ff7;
+    }
 }
 
 @tailwind utilities;

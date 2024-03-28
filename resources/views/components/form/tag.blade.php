@@ -87,7 +87,9 @@
     <div class="mt-0.5 flex flex-wrap gap-2 overflow-hidden">
         <template x-for="(tag, index) in tags">
             <div class="inline-flex items-center gap-1 text-xs font-medium text-white bg-indigo-600 rounded">
-                <span class="max-w-xs truncate py-0.5 pl-2 pr-1 leading-relaxed dark:text-white" x-text="tag"></span>
+                <span
+                    class="max-w-xs truncate py-0.5 ltr:pl-2 rtl:pr-2 ltr:pr-1 rtl:pl-1 leading-relaxed dark:text-white"
+                    x-text="tag"></span>
                 <button @click.prevent="removeTag(index)"
                     class="inline-block w-6 h-6 text-indigo-100 align-middle hover:text-white focus:outline-none">
                     <svg class="w-6 h-6 mx-auto fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

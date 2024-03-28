@@ -1,7 +1,7 @@
 <button {{ $attributes }}
     class="font-medium leading-none text-green-600 duration-150 hover:text-green-700 hover:underline"
     wire:loading.attr="disabled">
-    <div class="flex items-center space-x-1">
+    <div class="flex items-center gap-x-1">
         @if ($attributes->has('wire:target'))
             <svg wire:loading.delay.default class="h-[15px] w-[15px] animate-spin" xmlns="http://www.w3.org/2000/svg"
                 fill="none" viewBox="0 0 24 24" {{ $attributes->whereStartsWith('wire:target') }}>

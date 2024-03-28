@@ -1,6 +1,6 @@
 {
     "name": "laravel-backend",
-    "version": "0.8.9",
+    "version": "0.8.10",
     "description": "A simple backend UI for Laravel Projects.",
     "private": true,
     "scripts": {
@@ -21,6 +21,7 @@
         "@alpinejs/collapse": "^3.13.3",
         "@rollup/plugin-commonjs": "^25.0.7",
         "@ryangjchandler/alpine-clipboard": "^2.3.0",
+        "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
         "@toast-ui/editor": "^3.2.2",
         "alpinejs": "^3.13.3",
         "choices.js": "^10.2.0",
