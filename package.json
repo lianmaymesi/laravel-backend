@@ -27,6 +27,6 @@
         "choices.js": "^10.2.0",
         "flatpickr": "^4.6.13",
         "requirejs": "^2.3.6",
-        "trix": "^2.0.10"
+        "trix": "^2.1.1"
     }
 }
