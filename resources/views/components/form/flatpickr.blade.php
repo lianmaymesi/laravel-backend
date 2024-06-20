@@ -5,6 +5,9 @@
     'required' => false,
     'helpText' => '',
     'readonly' => false,
+    'type' => 'single',
+    'maxDate' => null,
+    'minDate' => null,
 ])
 <div class="grid gap-y-1.5">
     @if (!$labelOff)
@@ -23,9 +26,11 @@
             value: @entangle($attributes->wire('model')),
             init() {
                 let picker = flatpickr(this.$refs.picker, {
-                    mode: 'range',
+                    mode: {{ $type }},
                     dateFormat: 'Y/m/d',
                     defaultDate: this.value,
+                    minDate: {{ $minDate }},
+                    maxDate: {{ $maxDate }},
                     onChange: (date, dateString) => {
                         this.value = dateString.split(' to ')
                     }

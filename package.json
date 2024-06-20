@@ -1,6 +1,6 @@
 {
     "name": "laravel-backend",
-    "version": "0.8.10",
+    "version": "0.8.11",
     "description": "A simple backend UI for Laravel Projects.",
     "private": true,
     "scripts": {
@@ -26,6 +26,7 @@
         "alpinejs": "^3.13.3",
         "choices.js": "^10.2.0",
         "flatpickr": "^4.6.13",
+        "intl-tel-input": "^21.1.3",
         "requirejs": "^2.3.6",
         "trix": "^2.1.1"
     }
