@@ -2,6 +2,4 @@
 
 namespace Lianmaymesi\LaravelBackend;
 
-class LaravelBackend
-{
-}
+class LaravelBackend {}
