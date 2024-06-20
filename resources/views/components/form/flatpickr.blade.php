@@ -29,8 +29,8 @@
                     mode: {{ $type }},
                     dateFormat: 'Y/m/d',
                     defaultDate: this.value,
-                    minDate: {{ $minDate }},
-                    maxDate: {{ $maxDate }},
+                    minDate: {{ $minDate ?? 'null' }},
+                    maxDate: {{ $maxDate ?? 'null' }},
                     onChange: (date, dateString) => {
                         this.value = dateString.split(' to ')
                     }
