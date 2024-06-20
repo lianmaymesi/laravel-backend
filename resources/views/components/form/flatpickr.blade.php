@@ -32,7 +32,11 @@
                     minDate: '{{ $minDate ?? 'null' }}',
                     maxDate: '{{ $maxDate ?? 'null' }}',
                     onChange: (date, dateString) => {
+                        @if($type === 'single')
+                        this.value = dateString
+                        @else
                         this.value = dateString.split(' to ')
+                        @endif
                     }
                 })
                 this.$watch('value', () => picker.setDate(this.value))
