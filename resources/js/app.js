@@ -1,6 +1,10 @@
-import { Livewire, Alpine } from "../../vendor/livewire/livewire/dist/livewire.esm";
+import {
+    Livewire,
+    Alpine,
+} from "../../vendor/livewire/livewire/dist/livewire.esm";
 import Collapse from "@alpinejs/collapse";
 import Anchor from "@alpinejs/anchor";
+import sort from "@alpinejs/sort";
 import Editor from "@toast-ui/editor";
 import Choices from "choices.js";
 import Clipboard from "@ryangjchandler/alpine-clipboard";
@@ -9,11 +13,11 @@ import flatpickr from "flatpickr";
 
 const breakpoint = 1024;
 
-document.addEventListener('alpine:init', function () {
-    Alpine.data('sidebar', (persist = false) => ({
+document.addEventListener("alpine:init", function () {
+    Alpine.data("sidebar", (persist = false) => ({
         open: {
             above: true,
-            below: false
+            below: false,
         },
         isAboveBreakPoint: window.innerWidth > breakpoint,
         isSidebarPersist: persist,
@@ -21,19 +25,19 @@ document.addEventListener('alpine:init', function () {
             this.isAboveBreakPoint = window.innerWidth > breakpoint;
         },
         isOpen() {
-            if(this.isAboveBreakPoint & !this.isSidebarPersist) {
+            if (this.isAboveBreakPoint & !this.isSidebarPersist) {
                 return this.open.above;
             }
             return this.open.below;
         },
         handleOpen() {
-            if(this.isAboveBreakPoint) {
+            if (this.isAboveBreakPoint) {
                 this.open.above = true;
             }
             this.open.below = true;
         },
         handleClose() {
-            if(this.isSidebarPersist) {
+            if (this.isSidebarPersist) {
                 this.open.above = false;
             } else {
                 this.open.above = false;
@@ -41,17 +45,17 @@ document.addEventListener('alpine:init', function () {
             this.open.below = false;
         },
         handleAway() {
-            if(this.isSidebarPersist)  {
+            if (this.isSidebarPersist) {
                 this.open.below = false;
             } else {
-                if(!this.isAboveBreakPoint) {
+                if (!this.isAboveBreakPoint) {
                     this.open.below = false;
                 }
             }
-        }
+        },
     }));
 
-    Alpine.data('inlineedit', () => ({
+    Alpine.data("inlineedit", () => ({
         isEditing: false,
         toggleEditingState() {
             this.isEditing = !this.isEditing;
@@ -64,12 +68,13 @@ document.addEventListener('alpine:init', function () {
         },
         disableEditing() {
             this.isEditing = false;
-        }
+        },
     }));
 });
 
 Alpine.plugin(Collapse);
 Alpine.plugin(Anchor);
 Alpine.plugin(Clipboard);
+Alpine.plugin(sort);
 
 Livewire.start();
