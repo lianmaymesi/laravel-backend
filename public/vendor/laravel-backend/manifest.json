@@ -1,6 +1,6 @@
 {
-  "_@alpinejs-d94a7ae9.js": {
-    "file": "assets/@alpinejs-d94a7ae9.js"
+  "_@alpinejs-0d5109be.js": {
+    "file": "assets/@alpinejs-0d5109be.js"
   },
   "_@ryangjchandler-4b32d34b.js": {
     "file": "assets/@ryangjchandler-4b32d34b.js"
@@ -118,9 +118,9 @@
     "src": "resources/css/trix.css"
   },
   "resources/js/app.js": {
-    "file": "assets/app-79f1e24c.js",
+    "file": "assets/app-6bd86b55.js",
     "imports": [
-      "_@alpinejs-d94a7ae9.js",
+      "_@alpinejs-0d5109be.js",
       "_@toast-ui-26739e3a.js",
       "_choices.js-fb843276.js",
       "_@ryangjchandler-4b32d34b.js",

@@ -7,4 +7,4 @@ sortablejs/modular/sortable.esm.js:
    * @author	owenm    <owen23355@gmail.com>
    * @license MIT
    *)
-*/export{Yo as a,Vo as b,Wo as m};
+*/export{Wo as a,Yo as b,Vo as m};

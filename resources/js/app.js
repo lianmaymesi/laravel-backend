@@ -72,9 +72,9 @@ document.addEventListener("alpine:init", function () {
     }));
 });
 
+Alpine.plugin(sort);
 Alpine.plugin(Collapse);
 Alpine.plugin(Anchor);
 Alpine.plugin(Clipboard);
-Alpine.plugin(sort);
 
 Livewire.start();
