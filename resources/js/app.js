@@ -1,7 +1,3 @@
-import {
-    Livewire,
-    Alpine,
-} from "../../vendor/livewire/livewire/dist/livewire.esm";
 import Collapse from "@alpinejs/collapse";
 import Anchor from "@alpinejs/anchor";
 import sort from "@alpinejs/sort";
@@ -77,5 +73,3 @@ Alpine.plugin(sort);
 Alpine.plugin(Collapse);
 Alpine.plugin(Anchor);
 Alpine.plugin(Clipboard);
-
-Livewire.start();

@@ -121,7 +121,7 @@
     "src": "resources/css/trix.css"
   },
   "resources/js/app.js": {
-    "file": "assets/app-aac809e7.js",
+    "file": "assets/app-122622ae.js",
     "imports": [
       "_@alpinejs-0d5109be.js",
       "_@toast-ui-26739e3a.js",
