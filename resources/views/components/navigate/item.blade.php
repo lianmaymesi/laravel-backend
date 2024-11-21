@@ -9,9 +9,13 @@
 <li
     @if ($hierarchy) x-data="{ show: false }" x-init="show = $currentHierarchy('{{ $path }}') ?? false" @endif>
     @if (!$hierarchy)
-        <a href="{{ $route }}" @if (!$noNavigate) wire:navigate @endif
-            class="flex items-center p-2 text-sm font-medium leading-none rounded-lg hover:bg-indigo-700 hover:text-indigo-50"
-            x-bind:class="$current('{{ $path }}') ? 'bg-indigo-700 text-indigo-50' : 'text-slate-700'">
+        <a href="{{ $route }}"
+            @if (!$noNavigate) wire:navigate x-bind:class="$current('{{ $path }}') ? 'bg-indigo-700 text-indigo-50' : 'text-slate-700'" class="flex items-center p-2 text-sm font-medium leading-none rounded-lg hover:bg-indigo-700 hover:text-indigo-50" @else
+                @class([
+                    'flex items-center p-2 text-sm font-medium leading-none rounded-lg hover:bg-indigo-700 hover:text-indigo-50',
+                    'bg-indigo-700 text-indigo-50' => $path && request()->is($route),
+                    'text-slate-700' => !$path,
+                ]) @endif>
             <div class="flex items-center gap-x-3">
                 @if (isset($icon))
                     {{ $icon }}
