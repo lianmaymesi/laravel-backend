@@ -10,7 +10,7 @@
 @if (!$noNavigate)
     x-init="show = $currentHierarchy('{{ $path }}') ?? false"
 @else
-    x-init="show = {{ request()->is($path) ? true : false }}" @endif
+    x-init="show = {{ request()->is($path) ? 'true' : 'false' }}" @endif
     @endif
     >
     @if (!$hierarchy)
