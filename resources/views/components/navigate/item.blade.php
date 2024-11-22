@@ -6,8 +6,13 @@
     'hierarchy' => false,
     'title' => '',
 ])
-<li
-    @if ($hierarchy) x-data="{ show: false }" x-init="show = $currentHierarchy('{{ $path }}') ?? false" @endif>
+<li @if ($hierarchy) x-data="{ show: false }"
+@if (!$noNavigate)
+    x-init="show = $currentHierarchy('{{ $path }}') ?? false"
+@else
+    x-init="show = {{ request()->is($path) ? true : false }}" @endif
+    @endif
+    >
     @if (!$hierarchy)
         <a href="{{ $route }}"
             @if (!$noNavigate) wire:navigate x-bind:class="$current('{{ $path }}') ? 'bg-indigo-700 text-indigo-50' : 'text-slate-700'" class="flex items-center p-2 text-sm font-medium leading-none rounded-lg hover:bg-indigo-700 hover:text-indigo-50" @else
