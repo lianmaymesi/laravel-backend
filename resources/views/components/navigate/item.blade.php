@@ -8,7 +8,7 @@
 ])
 @if (!$noNavigate)
     <li
-        @if ($hierarchy) x-data="{ show: false }" x-init="show = $currentHierarchy('{{ $path }}') ?? false" @endif>
+        @if ($hierarchy) x-data="{ show: false }" x-init="show = $currentHierarchy({{ json_encode($path) }}) ?? false" @endif>
         @if (!$hierarchy)
             <a href="{{ $route }}" wire:navigate
                 x-bind:class="$current('{{ $path }}') ? 'bg-indigo-700 text-indigo-50' : 'text-slate-700'"
@@ -64,12 +64,13 @@
         @endif
     </li>
 @else
-    <li @if ($hierarchy) x-data="{ show: false }" x-init="show = @json(request()->is($path))" @endif>
+    <li
+        @if ($hierarchy) x-data="{ show: false }" x-init="show = {{ json_encode(request()->is($path)) }}" @endif>
         @if (!$hierarchy)
             <a href="{{ $route }}" @class([
                 'flex items-center p-2 text-sm font-medium leading-none rounded-lg hover:bg-indigo-700 hover:text-indigo-50',
-                'bg-indigo-700 text-indigo-50' => request()->is($route),
-                'text-slate-700' => !request()->is($route),
+                'bg-indigo-700 text-indigo-50' => request()->is($path),
+                'text-slate-700' => !request()->is($path),
             ])>
                 <div class="flex items-center gap-x-3">
                     @if (isset($icon))
