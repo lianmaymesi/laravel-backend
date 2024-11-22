@@ -7,21 +7,12 @@
     'title' => '',
 ])
 @if (!$noNavigate)
-    <li @if ($hierarchy) x-data="{ show: false }"
-@if (!$noNavigate)
-    x-init="show = $currentHierarchy('{{ $path }}') ?? false"
-@else
-    x-init="show = {{ request()->is($path) ? 'true' : 'false' }}" @endif
-        @endif
-        >
+    <li
+        @if ($hierarchy) x-data="{ show: false }" x-init="show = $currentHierarchy('{{ $path }}') ?? false" @endif>
         @if (!$hierarchy)
-            <a href="{{ $route }}"
-                @if (!$noNavigate) wire:navigate x-bind:class="$current('{{ $path }}') ? 'bg-indigo-700 text-indigo-50' : 'text-slate-700'" class="flex items-center p-2 text-sm font-medium leading-none rounded-lg hover:bg-indigo-700 hover:text-indigo-50" @else
-                @class([
-                    'flex items-center p-2 text-sm font-medium leading-none rounded-lg hover:bg-indigo-700 hover:text-indigo-50',
-                    'bg-indigo-700 text-indigo-50' => $path && request()->is($route),
-                    'text-slate-700' => !$path,
-                ]) @endif>
+            <a href="{{ $route }}" wire:navigate
+                x-bind:class="$current('{{ $path }}') ? 'bg-indigo-700 text-indigo-50' : 'text-slate-700'"
+                class="flex items-center p-2 text-sm font-medium leading-none rounded-lg hover:bg-indigo-700 hover:text-indigo-50">
                 <div class="flex items-center gap-x-3">
                     @if (isset($icon))
                         {{ $icon }}
@@ -73,13 +64,12 @@
         @endif
     </li>
 @else
-    <li
-        @if ($hierarchy) x-data="{ show: false }" x-init="show = {{ request()->is($path) ? 'true' : 'false' }}" @endif>
+    <li @if ($hierarchy) x-data="{ show: false }" x-init="show = @json(request()->is($path))" @endif>
         @if (!$hierarchy)
             <a href="{{ $route }}" @class([
                 'flex items-center p-2 text-sm font-medium leading-none rounded-lg hover:bg-indigo-700 hover:text-indigo-50',
-                'bg-indigo-700 text-indigo-50' => $path && request()->is($route),
-                'text-slate-700' => !$path,
+                'bg-indigo-700 text-indigo-50' => request()->is($route),
+                'text-slate-700' => !request()->is($route),
             ])>
                 <div class="flex items-center gap-x-3">
                     @if (isset($icon))
