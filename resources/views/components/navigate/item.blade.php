@@ -64,7 +64,8 @@
         @endif
     </li>
 @else
-    <li @if ($hierarchy) x-data="{ show: false }" x-init="show = {{ json_encode($is_active) }}" @endif>
+    <li
+        @if ($hierarchy) x-data="{ show: false }" x-init="show = {{ json_encode(request()->is($path)) }}" @endif>
         @if (!$hierarchy)
             <a href="{{ $route }}" @class([
                 'flex items-center p-2 text-sm font-medium leading-none rounded-lg hover:bg-indigo-700 hover:text-indigo-50',
