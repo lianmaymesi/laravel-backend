@@ -6,7 +6,6 @@ import Choices from "choices.js";
 import Clipboard from "@ryangjchandler/alpine-clipboard";
 import Trix from "trix";
 import flatpickr from "flatpickr";
-import "livewire-sortable";
 
 const breakpoint = 1024;
 
