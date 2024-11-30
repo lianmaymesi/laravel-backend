@@ -1,3 +1,4 @@
+import Alpine from "alpinejs";
 import Collapse from "@alpinejs/collapse";
 import Anchor from "@alpinejs/anchor";
 import sort from "@alpinejs/sort";
