@@ -24,6 +24,9 @@
   "_flatpickr-f29ca199.js": {
     "file": "assets/flatpickr-f29ca199.js"
   },
+  "_livewire-sortable-7cf95784.js": {
+    "file": "assets/livewire-sortable-7cf95784.js"
+  },
   "_orderedmap-1b52af60.js": {
     "file": "assets/orderedmap-1b52af60.js"
   },
@@ -118,7 +121,7 @@
     "src": "resources/css/trix.css"
   },
   "resources/js/app.js": {
-    "file": "assets/app-48113737.js",
+    "file": "assets/app-1a7e14e5.js",
     "imports": [
       "_@alpinejs-0d5109be.js",
       "_@toast-ui-9b1b1725.js",
@@ -126,6 +129,7 @@
       "_@ryangjchandler-4b32d34b.js",
       "_trix-79bedd23.js",
       "_flatpickr-f29ca199.js",
+      "_livewire-sortable-7cf95784.js",
       "_prosemirror-model-b0ccb63f.js",
       "_orderedmap-1b52af60.js",
       "_prosemirror-view-43540c64.js",

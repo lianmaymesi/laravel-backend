@@ -1,4 +1,3 @@
-import Alpine from "alpinejs";
 import Collapse from "@alpinejs/collapse";
 import Anchor from "@alpinejs/anchor";
 import sort from "@alpinejs/sort";
@@ -7,6 +6,7 @@ import Choices from "choices.js";
 import Clipboard from "@ryangjchandler/alpine-clipboard";
 import Trix from "trix";
 import flatpickr from "flatpickr";
+import "livewire-sortable";
 
 const breakpoint = 1024;
 
