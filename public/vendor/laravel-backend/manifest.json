@@ -18,6 +18,9 @@
       "_prosemirror-history-40b568f7.js"
     ]
   },
+  "_alpinejs-bd15a78d.js": {
+    "file": "assets/alpinejs-bd15a78d.js"
+  },
   "_choices.js-fb843276.js": {
     "file": "assets/choices.js-fb843276.js"
   },
@@ -121,8 +124,9 @@
     "src": "resources/css/trix.css"
   },
   "resources/js/app.js": {
-    "file": "assets/app-1a7e14e5.js",
+    "file": "assets/app-e5616f46.js",
     "imports": [
+      "_alpinejs-bd15a78d.js",
       "_@alpinejs-0d5109be.js",
       "_@toast-ui-9b1b1725.js",
       "_choices.js-fb843276.js",
