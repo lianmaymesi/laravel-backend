@@ -30,6 +30,6 @@
         "intl-tel-input": "^21.1.3",
         "livewire-sortable": "^1.0.0",
         "requirejs": "^2.3.6",
-        "trix": "^2.1.4"
+        "trix": "^2.1.9"
     }
 }
