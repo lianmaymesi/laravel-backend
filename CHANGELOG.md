@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-backend` will be documented in this file.
 
+## v1.5.0 - 2024-12-10
+
+### What's Changed
+
+* Bump trix from 2.1.8 to 2.1.9 by @dependabot in https://github.com/lianmaymesi/laravel-backend/pull/12
+
+**Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v1.4.0...v1.5.0
+
 ## v1.4.0 - 2024-12-02
 
 **Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v1.3.0...v1.4.0
