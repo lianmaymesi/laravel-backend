@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-backend` will be documented in this file.
 
+## v2.0 L12 Support - 2025-03-05
+
+**Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v1.6...v2.0
+
 ## v1.6 - 2025-03-05
 
 ### What's Changed
