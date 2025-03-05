@@ -4,7 +4,7 @@
     'savingProgress' => true,
 ])
 <x-lb::modal :id="$id" :maxWidth="$maxWidth" {{ $attributes }}>
-    <div class="sticky top-0 z-[999999] w-full bg-slate-100 p-4 text-lg font-medium">
+    <div class="sticky top-0 z-999999 w-full bg-slate-100 p-4 text-lg font-medium">
         @if (isset($header))
             {{ $header }}
         @endif

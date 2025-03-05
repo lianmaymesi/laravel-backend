@@ -12,8 +12,8 @@
     'text-right' => $right,
     'text-left' => $left,
     'text-center' => $center,
-    'sticky first-of-type:left-0 z-[999] bg-slate-50' => $leftSticky,
-    'sticky last-of-type:right-0 z-[999] bg-slate-50' => $rightSticky,
+    'sticky first-of-type:left-0 z-999 bg-slate-50' => $leftSticky,
+    'sticky last-of-type:right-0 z-999 bg-slate-50' => $rightSticky,
 ]) {{ $attributes }}>
     {{ $slot }}
 </td>

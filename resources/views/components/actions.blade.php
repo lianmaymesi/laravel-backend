@@ -18,7 +18,7 @@
     </button>
     <div class=""
         :class="{
-            'absolute shadow-md z-50 text-left right-0 top-12 py-4 px-2 flex flex-col items-start w-full !min-w-[240px] bg-white border rounded-lg gap-y-2': show &
+            'absolute shadow-md z-50 text-left right-0 top-12 py-4 px-2 flex flex-col items-start w-full min-w-[240px]! bg-white border rounded-lg gap-y-2': show &
                 width < 1024,
             'flex items-center gap-x-2': width > 1024
         }"

@@ -18,7 +18,7 @@
             <div class="relative">
                 <div class="relative mb-0 w-full">
                     <header class="relative w-full min-w-[min-content] border-b border-slate-100 bg-white py-2">
-                        <div class="mx-auto flex max-w-screen-2xl items-center justify-between px-4">
+                        <div class="mx-auto flex max-w-(--breakpoint-2xl) items-center justify-between px-4">
                             <button x-show="!isOpen()" @click.prevent="handleOpen()">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
@@ -58,7 +58,7 @@
                         </div>
                     </header>
                 </div>
-                <div class="relative mx-auto flex max-w-screen-2xl flex-col">
+                <div class="relative mx-auto flex max-w-(--breakpoint-2xl) flex-col">
                     <div class="flex items-end justify-between px-4">
                         {{ $heading }}
                     </div>

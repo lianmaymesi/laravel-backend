@@ -30,7 +30,7 @@
             {{ $attributes->whereStartsWith('wire:model') }} />
         <div x-on:trix-change.debounce.1000ms="description = $refs.trix.value">
             <trix-editor x-ref="trix" input="{{ $id }}"
-                class="porse !grid !w-full !overflow-hidden overflow-y-scroll rounded-lg border-none bg-slate-50 ring-1 ring-slate-950/10 focus-within:ring-2 focus-within:ring-indigo-600">
+                class="porse grid! w-full! overflow-hidden! overflow-y-scroll rounded-lg border-none bg-slate-50 ring-1 ring-slate-950/10 focus-within:ring-2 focus-within:ring-indigo-600">
             </trix-editor>
         </div>
         @if ($helpText)

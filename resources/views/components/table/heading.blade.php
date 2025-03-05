@@ -12,8 +12,8 @@
 <th {{ $attributes }} @class([
     'bg-gray-100 px-3 py-2 sm:first-of-type:ps-3 sm:last-of-type:pe-3',
     'hidden' => $hideColumn,
-    'sticky first-of-type:left-0 z-[9999]' => $leftSticky,
-    'sticky last-of-type:right-0 z-[9999]' => $rightSticky,
+    'sticky first-of-type:left-0 z-9999' => $leftSticky,
+    'sticky last-of-type:right-0 z-9999' => $rightSticky,
     'sticky top-0' => $sticky,
     'text-right' => $right && !$left,
     'text-left' => $left && !$right,

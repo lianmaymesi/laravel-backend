@@ -1,4 +1,4 @@
-<header class="z-[999999999] flex items-center justify-center flex-shrink-0 w-full p-4 bg-white border-b shadow-md">
+<header class="z-999999999 flex items-center justify-center shrink-0 w-full p-4 bg-white border-b shadow-md">
     @if (isset($heading))
         <div class="flex items-center justify-between w-full">
             <h1 class="text-xl font-semibold">{{ $heading }}</h1>

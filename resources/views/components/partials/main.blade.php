@@ -24,10 +24,10 @@
         'max' => 'max-w-max',
         'fit' => 'max-w-fit',
         'scrren-sm' => 'max-w-scrren-sm',
-        'screen-md' => 'max-w-screen-md',
-        'screen-lg' => 'max-w-screen-lg',
-        'screen-xl' => 'max-w-screen-xl',
-        'screen-2xl' => 'max-w-screen-2xl',
+        'screen-md' => 'max-w-(--breakpoint-md)',
+        'screen-lg' => 'max-w-(--breakpoint-lg)',
+        'screen-xl' => 'max-w-(--breakpoint-xl)',
+        'screen-2xl' => 'max-w-(--breakpoint-2xl)',
     ][$maxWidth ?? '2xl'];
 @endphp
 <div class="relative h-screen">
