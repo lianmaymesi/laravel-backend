@@ -2,6 +2,17 @@
 
 All notable changes to `laravel-backend` will be documented in this file.
 
+## v1.6 - 2025-03-05
+
+### What's Changed
+
+* Bump trix from 2.1.9 to 2.1.12 by @dependabot in https://github.com/lianmaymesi/laravel-backend/pull/13
+* Bump dependabot/fetch-metadata from 2.2.0 to 2.3.0 by @dependabot in https://github.com/lianmaymesi/laravel-backend/pull/14
+* Bump vite from 4.5.5 to 4.5.9 by @dependabot in https://github.com/lianmaymesi/laravel-backend/pull/15
+* Bump aglipanci/laravel-pint-action from 2.4 to 2.5 by @dependabot in https://github.com/lianmaymesi/laravel-backend/pull/16
+
+**Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v1.5.2...v1.6
+
 ## v1.5.2 - 2025-01-02
 
 **Full Changelog**: https://github.com/lianmaymesi/laravel-backend/compare/v1.5.1...v1.5.2
